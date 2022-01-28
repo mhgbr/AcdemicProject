@@ -1,0 +1,10 @@
+is_global = true
+build_property.TargetFramework = net5.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MVCProject
+build_property.ProjectDir = D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\ProjectMVC\ProjectMVC\MVCProject\MVCProject\
