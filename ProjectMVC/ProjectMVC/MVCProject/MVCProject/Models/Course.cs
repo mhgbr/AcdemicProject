@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCProject.Models
@@ -7,6 +8,7 @@ namespace MVCProject.Models
     {
         public int Id { get; set; }
 
+        [Remote(action: "IsExist", controller: "Course", ErrorMessage = "Course Name is already exists", AdditionalFields = "Id")]
         [Required(ErrorMessage = "Name is required")]
         [RegularExpression(pattern: "^[a-zA-Z]{3,30}$", ErrorMessage = "Course Name must be between 3 and 30 letters")]
         public string Name { get; set; }
