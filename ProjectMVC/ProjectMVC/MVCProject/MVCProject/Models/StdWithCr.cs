@@ -2,7 +2,7 @@
 
 namespace MVCProject.Models
 {
-    public class StdWithCrs
+    public class StdWithCr
     {
         public int Id { get; set; }
 
@@ -10,6 +10,7 @@ namespace MVCProject.Models
 
         [ForeignKey("Course")]
         public int CrsId { get; set; }
+
         [ForeignKey("Student")]
 
         public int StId { get; set; }

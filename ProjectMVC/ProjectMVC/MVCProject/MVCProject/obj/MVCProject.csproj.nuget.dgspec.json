@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mgabr\\OneDrive\\Desktop\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {}
+    "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mgabr\\OneDrive\\Desktop\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {
+    "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mgabr\\OneDrive\\Desktop\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "projectUniqueName": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
         "projectName": "MVCProject",
-        "projectPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "projectPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
         "packagesPath": "C:\\Users\\mgabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
+        "outputPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mgabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,12 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.13, )"
             }
