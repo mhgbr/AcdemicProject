@@ -5796,19 +5796,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mgabr\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
-      "projectPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "packagesPath": "C:\\Users\\mgabr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
+      "projectPath": "C:\\Users\\Dell\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mgabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5855,6 +5855,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5863,7 +5869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
