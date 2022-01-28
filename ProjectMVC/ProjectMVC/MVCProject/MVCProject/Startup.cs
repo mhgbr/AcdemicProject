@@ -30,6 +30,8 @@ namespace MVCProject
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
 
             services.AddScoped<ITrackService, TrackService>();
+            services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

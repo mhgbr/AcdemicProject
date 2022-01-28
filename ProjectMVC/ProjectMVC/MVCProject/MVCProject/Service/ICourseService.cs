@@ -1,6 +1,5 @@
 ﻿using MVCProject.Models;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace MVCProject.Service
 {

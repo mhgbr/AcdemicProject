@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MVCProject.Service
 {
-	class CourseService : ICourseService
+    class CourseService : ICourseService
     {
         public DBFile Context { get; }
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MVCProject.Service;
 using MVCProject.Models;
+using MVCProject.Service;
 using System;
 
 namespace MVCProject.Controllers
@@ -46,7 +46,7 @@ namespace MVCProject.Controllers
             Course crs = course.GetById(id);
             return View(crs);
         }
-        
+
         public IActionResult Update([FromRoute] int id, Course crs)
         {
             if (ModelState.IsValid)

@@ -7304,19 +7304,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ahmed\\.nuget\\packages\\": {}
+    "C:\\Users\\Alli\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectUniqueName": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
-      "projectPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
+      "projectPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "packagesPath": "C:\\Users\\Alli\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7382,13 +7387,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
