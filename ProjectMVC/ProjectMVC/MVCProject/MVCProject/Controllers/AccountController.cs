@@ -9,10 +9,10 @@ namespace MVCProject.Controllers
     {
         public UserManager<IdentityUser> UserManager { get; }
         public SignInManager<IdentityUser> SignInManager { get; }
-        public AccountController(UserManager<IdentityUser> User_Manager, SignInManager<IdentityUser> Sign_InManager)
+        public AccountController(UserManager<IdentityUser> _UserManager, SignInManager<IdentityUser> _SignInManager)
         {
-            User_Manager = User_Manager;
-            Sign_InManager = Sign_InManager;
+            UserManager = _UserManager;
+            SignInManager = _SignInManager;
         }
 
         [HttpGet]
@@ -30,7 +30,7 @@ namespace MVCProject.Controllers
                 IdentityUser user = new IdentityUser();
                 user.UserName = account.UserName;
                 user = await UserManager.FindByEmailAsync(account.Email);
-                if(user == null)
+                if (user == null)
                     user.Email = account.Email;
                 else
                 {
@@ -66,10 +66,10 @@ namespace MVCProject.Controllers
             {
                 //find user in db
                 IdentityUser user = await UserManager.FindByNameAsync(account.UserName);
-                if(user != null)
+                if (user != null)
                 {
                     //create cookie for login if user.password == account.Password
-                    Microsoft.AspNetCore.Identity.SignInResult result = 
+                    Microsoft.AspNetCore.Identity.SignInResult result =
                         await SignInManager.PasswordSignInAsync(user, account.Password, account.RememberMe, false);
                     if (result.Succeeded)
                         return LocalRedirect(ReturnUrl);
