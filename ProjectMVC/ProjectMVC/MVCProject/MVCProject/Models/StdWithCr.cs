@@ -12,7 +12,6 @@ namespace MVCProject.Models
         public int CrsId { get; set; }
 
         [ForeignKey("Student")]
-
         public int StId { get; set; }
 
         public Student Student { get; set; }

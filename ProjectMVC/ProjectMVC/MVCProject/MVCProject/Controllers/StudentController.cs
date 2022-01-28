@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
 using MVCProject.Service;
-using MVCProject.Services;
 using System;
 using System.Collections.Generic;
 
@@ -138,21 +137,16 @@ namespace MVCProject.Controllers
 
         //public IActionResult getStudent(int id)
         //{
-        //    Trainee tr1 = context.Trainee.FirstOrDefault(s => s.ID == id);
+        //    Student std = context.Students.FirstOrDefault(s => s.ID == id);
 
-        //    CrsResult crs1 =
-        //        context.CrsResult.Include(c => c.Course).Include(ww => ww.Trainee).FirstOrDefault(ww => ww.tr == id);
-        //    StudentWithCourseViewModel stdVM = new StudentWithCourseViewModel();
+        //    StdWithCr crs =
+        //    context.StdWithCr.Include(c => c.Course).Include(ww => ww.Student).FirstOrDefault(ww => ww.tr == id);
+        //    StudentWithCrsDegreeVM stdVM = new StudentWithCrsDegreeVM();
 
-        //    stdVM.StudentName = crs1.Trainee.Name;
-        //    stdVM.CrsName = crs1.Course.Name;
-        //    stdVM.Degree = crs1.Degree;
-
-        //    stdVM.Id = crs1.Id;
-        //    if (stdVM.Degree > crs1.Course.minDegree)
-        //        stdVM.Color = "green";
-        //    else if (stdVM.Degree < crs1.Course.minDegree)
-        //        stdVM.Color = "red";
+        //    stdVM.StudentName = crs.Student.Name;
+        //    stdVM.CrsName = crs.Course.Name;
+        //    stdVM.Degree = crs.Degree;
+        //    stdVM.Id = crs.Id;
 
         //    return View(stdVM);
         //}
