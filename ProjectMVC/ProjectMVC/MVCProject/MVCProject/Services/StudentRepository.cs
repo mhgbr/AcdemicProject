@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Day1.Services
+namespace MVCProject.Services
 {
     public class StudentRepository : IStudentRepository
     {

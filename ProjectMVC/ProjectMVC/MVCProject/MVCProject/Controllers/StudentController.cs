@@ -1,6 +1,8 @@
-﻿using Day1.Services;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
+using MVCProject.Service;
+using MVCProject.Services;
+using System;
 using System.Collections.Generic;
 
 namespace MVCProject.Controllers
@@ -8,33 +10,41 @@ namespace MVCProject.Controllers
     public class StudentController : Controller
     {
         IStudentRepository StudentServices;
-       // ITrackRepository TrackServices;
-       // IInstructorRepository InstServices;
-        //CrsEntities context = new CrsEntities();
-        public StudentController(IStudentRepository _stdRepo, /*ITrackRepository _trkRepo, IInstructorRepository _instRepo*/)
+        ITrackService TrackServices;
+        //IInstructorRepository InstServices;
+        //ICourseRepository CourseServices;
+
+        public StudentController(IStudentRepository _stdRepo, ITrackService _trkRepo /*, IInstructorRepository _instRepo*/)
         {
             StudentServices = _stdRepo; //new StudentRepository();
-           // departmentServices = _deptRepo;
-           // courseServices = _crsRepo;
+            TrackServices   = _trkRepo;
+          // courseServices = _crsRepo;
         }
 
-        public IActionResult Index()
+        public IActionResult GetAll()
         {
-            List<Student> stdModel = StudentServices.getAll();
-            return View("Index", stdModel);
+            return View(StudentServices.getAll());
         }
 
-        public IActionResult Add()
+        public IActionResult GetById([FromRoute] int id)
         {
-            //List<Track> tr = TrackServices.getAll();
+            return View(StudentServices.getById(id));
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            List<Track> tr = TrackServices.GetAll();
             //ViewData["Trs"] = dept;
            // List<Instructor> inst = InstructorServices.getAll();
             //ViewData["insts"] = inst;
             Student std = new Student();
             return View(std);
         }
+
+
         [HttpPost]
-        public IActionResult SaveAdd(Student newstd)
+        public IActionResult Create(Student newstd)
         {
             if (ModelState.IsValid == true)
             {
@@ -42,33 +52,29 @@ namespace MVCProject.Controllers
                 StudentServices.Create(newstd);
 
                 //display index view
-                return RedirectToAction("Index");
+                return RedirectToAction("GetAll");
             }
 
-            //List<Track> dept = TrackServices.getAll();
-            //ViewData["Trs"] = dept;
+            List<Track> trs = TrackServices.GetAll();
+            ViewData["Trs"] = trs;
            // List<Instructor> inst = InstructorServices.getAll();
             //ViewData["insts"] = inst;
             //Add
             return View("Add", newstd);//html
         }
 
-        public IActionResult Index2()
+        [HttpGet]
+        public IActionResult Update(int id)
         {
-            return View();
-        }
-
-        public IActionResult Edit(int id)
-        {
-            //List<Track> trs = TrackServices.getAll();
-            //ViewData["Trs"] = trs;
+            List<Track> trs = TrackServices.GetAll();
+            ViewData["Trs"] = trs;
             //List<Instructor>inst = InstructorServices.getAll();
             //ViewData["insts"] = inst;
-            Student inst = StudentServices.getById(id);
-            return View(inst);
+            Student std = StudentServices.getById(id);
+            return View(std);
         }
-
-        public IActionResult SaveEdit(int id, Student newStudent)
+        [HttpPost]
+        public IActionResult Update(int id, Student newStudent)
         {
             if (ModelState.IsValid == true)
             {
@@ -77,11 +83,26 @@ namespace MVCProject.Controllers
                 return RedirectToAction("Index");
 
             }
-            //List<Track> trs = TrackServices.getAll();
-            //ViewData["Trs"] = trs;
+            List<Track> trs = TrackServices.GetAll();
+            ViewData["Trs"] = trs;
             //List<Instructor> crs = InstructorServices.getAll();
             //ViewData["inst"] = crs;
             return View("Edit", newStudent);
+        }
+
+
+        public IActionResult Delete([FromRoute] int id)
+        {
+            try
+            {
+                StudentServices.Delete(id);
+                return RedirectToAction("GetAll");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.InnerException.Message);
+                return View("Update");
+            }
         }
 
         public IActionResult NameExist(string Name, int id)
@@ -114,12 +135,36 @@ namespace MVCProject.Controllers
             }
         }
 
-        public IActionResult GetInstructor(int id)
-        {
-            List<Student> stdModel = StudentServices.getStudentByTrackId(id);
-            return PartialView("_StudentCard", stdModel);
-        }
+
+        //public IActionResult getStudent(int id)
+        //{
+        //    Trainee tr1 = context.Trainee.FirstOrDefault(s => s.ID == id);
+
+        //    CrsResult crs1 =
+        //        context.CrsResult.Include(c => c.Course).Include(ww => ww.Trainee).FirstOrDefault(ww => ww.tr == id);
+        //    StudentWithCourseViewModel stdVM = new StudentWithCourseViewModel();
+
+        //    stdVM.StudentName = crs1.Trainee.Name;
+        //    stdVM.CrsName = crs1.Course.Name;
+        //    stdVM.Degree = crs1.Degree;
+
+        //    stdVM.Id = crs1.Id;
+        //    if (stdVM.Degree > crs1.Course.minDegree)
+        //        stdVM.Color = "green";
+        //    else if (stdVM.Degree < crs1.Course.minDegree)
+        //        stdVM.Color = "red";
+
+        //    return View(stdVM);
+        //}
+
+
+
+        //public IActionResult getInstructors(int id)
+        //{
+        //    List<Instructor> instModel = InstServices.getInstructorByID(id);
+        //    return View("ShowAllInstructors", instModel);//connection betwen view with model
+        //}
     }
 
 }
-}
+

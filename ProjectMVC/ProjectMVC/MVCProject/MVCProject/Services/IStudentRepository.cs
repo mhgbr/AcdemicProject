@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Day1.Services
+namespace MVCProject.Services
 {
     public interface IStudentRepository
     {
