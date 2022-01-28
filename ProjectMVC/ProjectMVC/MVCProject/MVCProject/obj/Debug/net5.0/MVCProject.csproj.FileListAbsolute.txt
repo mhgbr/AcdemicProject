@@ -1,0 +1,8 @@
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.csproj.AssemblyReference.cache
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.AssemblyInfoInputs.cache
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.AssemblyInfo.cs
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.csproj.CoreCompileInputs.cache
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.RazorAssemblyInfo.cache
+C:\Users\mgabr\OneDrive\Desktop\ProjectMVC\ProjectMVC\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.RazorAssemblyInfo.cs
