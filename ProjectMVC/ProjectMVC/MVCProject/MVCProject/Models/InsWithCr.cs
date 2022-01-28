@@ -12,7 +12,7 @@ namespace MVCProject.Models
         public int CrsId { get; set; }
 
         public Course Course { get; set; }
-        public Instructor  Instructor { get; set; }
+        public Instructor Instructor { get; set; }
 
     }
 }

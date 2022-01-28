@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MVCProject.Models;
+using MVCProject.Service;
 
 namespace MVCProject
 {
@@ -23,6 +22,9 @@ namespace MVCProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True"));
+            services.AddScoped<ITrackService, TrackService>();
+            services.AddScoped<IInstructorService, InstructorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +41,8 @@ namespace MVCProject
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

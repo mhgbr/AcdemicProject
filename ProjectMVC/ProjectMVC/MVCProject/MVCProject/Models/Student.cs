@@ -37,7 +37,7 @@ namespace MVCProject.Models
 
         [ForeignKey("Track")]
         public int TR { get; set; }
-        public Track  Track { get; set; }
+        public Track Track { get; set; }
 
         [ForeignKey("Instructor")]
         public int Inst { get; set; }
