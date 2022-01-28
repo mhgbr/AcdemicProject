@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {}
+    "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {
+    "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "projectUniqueName": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
         "projectName": "MVCProject",
-        "projectPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
-        "packagesPath": "C:\\Users\\mgabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mgabr\\OneDrive\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
+        "projectPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
+        "outputPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mgabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
