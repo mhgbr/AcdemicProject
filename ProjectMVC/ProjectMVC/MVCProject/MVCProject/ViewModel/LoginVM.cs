@@ -2,7 +2,7 @@
 
 namespace MVCProject.ViewModel
 {
-    public class Login
+    public class LoginVM
     {
         [Required]
         [Display(Name = "User Name")]

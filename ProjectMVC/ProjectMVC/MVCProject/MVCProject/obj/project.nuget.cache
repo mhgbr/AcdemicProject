@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tCwDIfRVUEdGnTHQBZy5Q5u8JAQTLwbxILELDUBwDMwU+HPFP7Zag/vnjO5DdPWS+WhTwgZBulTXG4IyFvxvRg==",
+  "dgSpecHash": "b46n/S+Ghwc5OfIiqEBVI8lv45RZVRTPRz+FcgwJG6Ql88Q3udbIe+yRfFGo2G7u34XavQEw9szwwJ7fSzbP/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alli\\Desktop\\pro\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+  "projectFilePath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alli\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Alli\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.13\\microsoft.aspnetcore.cryptography.internal.5.0.13.nupkg.sha512",

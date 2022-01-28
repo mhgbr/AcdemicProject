@@ -5958,11 +5958,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alli\\Desktop\\pro\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectUniqueName": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
-      "projectPath": "C:\\Users\\Alli\\Desktop\\pro\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\MVCProject.csproj",
       "packagesPath": "C:\\Users\\Alli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alli\\Desktop\\pro\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
+      "outputPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\ProjectMVC\\ProjectMVC\\MVCProject\\MVCProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
