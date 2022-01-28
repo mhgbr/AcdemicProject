@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,9 +23,19 @@ namespace MVCProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
             services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True"));
+
+            //inject user manager - role manager - signin manager && add all store class that deal with database
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
+
             services.AddScoped<ITrackService, TrackService>();
+<<<<<<< HEAD
             services.AddScoped<IInstructorService, InstructorService>();
+=======
+            services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
+>>>>>>> 723223fe190afe553c0ee939a004a55bfc541e84
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
