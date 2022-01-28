@@ -30,6 +30,7 @@ namespace MVCProject
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
 
             services.AddScoped<ITrackService, TrackService>();
+            services.AddScoped<IInstructorService, InstructorService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<IStudentRepository, StudentRepository>();
         }
