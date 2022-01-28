@@ -1,0 +1,33 @@
+﻿@model List<Student>
+<!--Strong Type View-->
+
+
+<table class="table table-bordered table-hover" width="50%">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Track
+        </th>
+        <th>
+            Instructor
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Address</td>
+            <td>@item.Track</td>
+            <td>@item.Instructor</td>
+        </tr>
+    }
+</table>
