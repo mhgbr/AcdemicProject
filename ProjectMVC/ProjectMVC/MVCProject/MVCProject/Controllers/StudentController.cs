@@ -17,8 +17,8 @@ namespace MVCProject.Controllers
         public StudentController(IStudentRepository _stdRepo, ITrackService _trkRepo /*, IInstructorRepository _instRepo*/)
         {
             StudentServices = _stdRepo; //new StudentRepository();
-            TrackServices   = _trkRepo;
-          // courseServices = _crsRepo;
+            TrackServices = _trkRepo;
+            // courseServices = _crsRepo;
         }
 
         public IActionResult GetAll()
@@ -36,7 +36,7 @@ namespace MVCProject.Controllers
         {
             List<Track> tr = TrackServices.GetAll();
             //ViewData["Trs"] = dept;
-           // List<Instructor> inst = InstructorServices.getAll();
+            // List<Instructor> inst = InstructorServices.getAll();
             //ViewData["insts"] = inst;
             Student std = new Student();
             return View(std);
@@ -57,7 +57,7 @@ namespace MVCProject.Controllers
 
             List<Track> trs = TrackServices.GetAll();
             ViewData["Trs"] = trs;
-           // List<Instructor> inst = InstructorServices.getAll();
+            // List<Instructor> inst = InstructorServices.getAll();
             //ViewData["insts"] = inst;
             //Add
             return View("Add", newstd);//html
