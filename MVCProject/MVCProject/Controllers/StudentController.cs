@@ -44,7 +44,7 @@ namespace MVCProject.Controllers
 
 
         [HttpPost]
-        public IActionResult Save(Student newstd)///Save not create
+        public IActionResult Create(Student newstd)///Save not create -> create not save ya mayadaw
         {
             if (ModelState.IsValid)
             {
