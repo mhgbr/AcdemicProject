@@ -38,8 +38,7 @@ namespace MVCProject.Controllers
         {
             ViewData["Trs"] = TrackServices.GetAll();
             ViewData["insts"] = InstructorServices.GetAll();
-            Student std = new Student();
-            return View(std);
+            return View();
         }
 
 

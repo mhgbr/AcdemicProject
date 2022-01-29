@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCProject.ViewModel
 {
@@ -11,6 +12,8 @@ namespace MVCProject.ViewModel
 
         [Required]
         [DataType(DataType.EmailAddress)]
+        [Remote(action: "EmailExsist", controller: "Account",
+            ErrorMessage = "this email already exsist")]
         public string Email { get; set; }
 
         [Required]

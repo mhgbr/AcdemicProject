@@ -59,8 +59,7 @@ namespace MVCProject.Controllers
         public IActionResult Create()
         {
             ViewBag.tracks = TrackRepo.GetAll();
-            Instructor ins = new Instructor();
-            return View(ins);
+            return View();
         }
 
         [HttpPost]
@@ -71,33 +70,26 @@ namespace MVCProject.Controllers
                 InsRepo.Create(newins);
                 return RedirectToAction("GetAll");
             }
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
+            ViewBag.tracks = TrackRepo.GetAll();
             return View(newins);
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
-
+            ViewBag.tracks = TrackRepo.GetAll();
             Instructor std = InsRepo.GetById(id);
             return View(std);
         }
         [HttpPost]
-        public IActionResult Update([FromRoute] int id, Instructor newins)
+        public IActionResult Update(Instructor newins)
         {
             if (ModelState.IsValid)
             {
                 InsRepo.Update(newins);
                 return RedirectToAction("GetAll");
             }
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
+            ViewBag.tracks = TrackRepo.GetAll();
             return View(newins);
 
         }
