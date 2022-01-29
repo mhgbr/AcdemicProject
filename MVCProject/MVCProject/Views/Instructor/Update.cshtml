@@ -1,0 +1,59 @@
+﻿@model Instructor
+
+@{
+    SelectList tracks;
+    if(Model !=null)
+    {
+        tracks=new SelectList(ViewBag.tracks,"Id","Name",Model.Track_Id);
+    }
+    else
+    {
+        tracks=new SelectList(ViewBag.tracks,"Id","Name");
+    }
+}
+
+<form method="post" action="\Instructor\Update\@Model.Id">
+   <input asp-for="Id" type="hidden" class="form-control"/>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+   <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" type="file" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Age"></span>
+    </div>
+    <div>
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Salary"></span>
+    </div>
+    <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control"/>
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+    <div>
+        <label asp-for="PhoneNumber"></label>
+        <input asp-for="PhoneNumber" class="form-control"/>
+        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+    </div>
+  
+    <div>
+        <label asp-for="Track_Id">Tracks</label>
+        <select asp-for="Track_Id" asp-items="tracks" class="form-control" >
+        <span class="text-danger" asp-validation-for="Track_Id"></span>
+          
+        </select>
+    </div>
+   
+    <input type="submit" class="btn btn-sucess" value="Save" />
+</form>
+<br />
+
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js">
+    </script>
+}

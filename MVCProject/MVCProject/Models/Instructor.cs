@@ -26,6 +26,7 @@ namespace MVCProject.Models
         public int Salary { get; set; }
 
         [Required]
+        [DataType(DataType.PhoneNumber)]
         [RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
         public int PhoneNumber { get; set; }
 
