@@ -29,7 +29,13 @@
             <td>@item.Name</td>
             <td>@item.Age</td>
             <td>@item.Address</td>
-            <td>@item.Track</td>
+            @foreach(var i in ViewBag.Trs)
+            {
+                if(i.Id == item.Track_Id)
+                {
+                    <td>@i.Name</td>
+                }
+            }
             <td> <a href="/Student/GetById/@item.Id" class="btn btn-danger">Details</a></td>
             <td> <a href="/Student/Update/@item.Id" class="btn btn-primary">Edit</a></td>
         </tr>

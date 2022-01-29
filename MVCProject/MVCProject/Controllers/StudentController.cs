@@ -24,6 +24,7 @@ namespace MVCProject.Controllers
 
         public IActionResult GetAll()
         {
+            ViewData["Trs"] = TrackServices.GetAll();
             return View(StudentServices.GetAll());
         }
 
