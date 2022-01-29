@@ -1,38 +1,43 @@
 ﻿@model Student
 
 @{
-    SelectList tracks = new SelectList(ViewBag.Trs, Model.Track_Id);
+    Layout = "_Academic";
 }
 
-<form asp-action="SaveCreate" asp-controller="Student">
-    <div>
-        <label asp-for="Name">Name</label>
-        <input asp-for="Name" class="form-control" placeholder="Enter name">
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Age">Age</label>
-        <input asp-for="Age" class="form-control" placeholder="Enter your age!">
-        <span asp-validation-for="Age" class="text-danger"></span> 
-    </div>
-    <div>
-        <label asp-for="Address">Address</label>
-        <input asp-for="Address" class="form-control" placeholder="Enter your age!">
-        <span asp-validation-for="Address" class="text-danger"></span> 
-    </div>
-    <div>
-        <label asp-for="PhoneNumber">Phone Number</label>
-        <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your Phone number please!">
-        <span asp-validation-for="PhoneNumber" class="text-danger"></span> 
-    </div>
-    <div>
-        <label asp-for="Track_Id">Track ID</label>
-        <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
-    </div>
-    <input type="submit" value="Add Student" class="btn btn-primary mt-3 mr-3"/>
-</form>
-    <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary mt-3 mr-3">Create</a><br />
 
+@{
+    SelectList tracks = new SelectList(ViewBag.Trs, Model.Track_Id);
+}
+<div class="container mt-3">
+    <form asp-action="SaveCreate" asp-controller="Student">
+        <div>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Enter name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Age">Age</label>
+            <input asp-for="Age" class="form-control" placeholder="Enter your age!">
+            <span asp-validation-for="Age" class="text-danger"></span> 
+        </div>
+        <div>
+            <label asp-for="Address">Address</label>
+            <input asp-for="Address" class="form-control" placeholder="Enter your age!">
+            <span asp-validation-for="Address" class="text-danger"></span> 
+        </div>
+        <div>
+            <label asp-for="PhoneNumber">Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your Phone number please!">
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span> 
+        </div>
+        <div>
+            <label asp-for="Track_Id">Track ID</label>
+            <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
+        </div>
+        <input type="submit" value="Add Student" class="btn btn-primary mt-3 mr-3"/>
+    </form>
+        <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary mt-3 mr-3">Create</a><br />
+</div>
 @section Scripts{
     @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>

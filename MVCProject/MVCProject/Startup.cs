@@ -24,7 +24,10 @@ namespace MVCProject
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True"));
+            //services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True"));
+
+            //For ahmed only
+            services.AddDbContext<DBFile>(option => option.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AcdemicPro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
 
             //inject user manager - role manager - signin manager && add all store class that deal with database
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
