@@ -1,18 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
 using MVCProject.Service;
+using System;
 using System.Collections.Generic;
 
 namespace MVCProject.Controllers
 {
     public class InstructorController : Controller
     {
-        IInstructorService InsRepo;
-        ITrackService TrackRepo;
-        public InstructorController(IInstructorService Insrepo, ITrackService trackRepo)
+        public IInstructorService InsRepo { get; }
+        public ITrackService TrackRepo { get; }
+        public InstructorController(IInstructorService _InsRepo, ITrackService _TrackRepo)
         {
-            InsRepo = Insrepo;
-            TrackRepo = trackRepo;
+            InsRepo = _InsRepo;
+            TrackRepo = _TrackRepo;
         }
         public IActionResult GetAll()
         {
@@ -26,25 +27,18 @@ namespace MVCProject.Controllers
 
         public IActionResult NameExit(string Name, int id)
         {
+            Instructor ins = InsRepo.GetByName(Name);
             if (id == 0)   //add
             {
-                Instructor ins = InsRepo.GetByName(Name);
                 if (ins == null)
-                {
                     return Json(true);
-                }
                 else
-                {
                     return Json(false);
-                }
             }
             else           //edit
             {
-                Instructor ins = InsRepo.GetByName(Name);
                 if (ins == null)
-                {
                     return Json(true);
-                }
                 else
                 {
                     if (ins.Id == id)
@@ -52,53 +46,39 @@ namespace MVCProject.Controllers
                     else
                         return Json(false);
                 }
-
             }
-
         }
 
-
-        public IActionResult Index()
+        public IActionResult GetInstInTrack(int id)
         {
-            List<Instructor> insModel = InsRepo.GetAll();
-            return View("Index", insModel);
+            List<Instructor> gModel = InsRepo.GetAllInstById(id);
+            return PartialView("_", gModel);
         }
 
-        public IActionResult Detail(int id)
+        [HttpGet]
+        public IActionResult Create()
         {
-            List<Instructor> gModel = InsRepo.GetAllById(id);
-            return View("Detail", gModel);
-        }
-
-        public IActionResult add()
-        {
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
-
+            ViewBag.tracks = TrackRepo.GetAll();
             Instructor ins = new Instructor();
             return View(ins);
-
-
         }
 
         [HttpPost]
-        public IActionResult saveadd(Instructor newins)
+        public IActionResult Create(Instructor newins)
         {
-
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
-
                 InsRepo.Create(newins);
-                return RedirectToAction("Index");
+                return RedirectToAction("GetAll");
             }
 
             List<Track> tracks = TrackRepo.GetAll();
             ViewBag.tracks = tracks;
-            return View("add", newins);
+            return View(newins);
         }
 
-        public IActionResult edit(int id)
+        [HttpGet]
+        public IActionResult Update(int id)
         {
 
             List<Track> tracks = TrackRepo.GetAll();
@@ -107,22 +87,32 @@ namespace MVCProject.Controllers
             Instructor std = InsRepo.GetById(id);
             return View(std);
         }
-
-        public IActionResult saveEdit([FromRoute] int id, Instructor newins)
+        [HttpPost]
+        public IActionResult Update([FromRoute] int id, Instructor newins)
         {
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
-                Instructor ins = InsRepo.GetById(id);
-                InsRepo.Update(id, newins);
-                return RedirectToAction("Index");
+                InsRepo.Update(newins);
+                return RedirectToAction("GetAll");
             }
 
             List<Track> tracks = TrackRepo.GetAll();
             ViewBag.tracks = tracks;
+            return View(newins);
 
-            Instructor std = InsRepo.GetById(id);
-            return View("Index", std);
-
+        }
+        public IActionResult Delete([FromRoute] int id)
+        {
+            try
+            {
+                InsRepo.Delete(id);
+                return RedirectToAction("GetAll");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                return View();
+            }
         }
     }
 }

@@ -22,25 +22,16 @@ namespace MVCProject.Models
         public string Address { get; set; }
 
         [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        [Required]
         [DataType(DataType.PhoneNumber)]
+        [RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
         public int PhoneNumber { get; set; }
 
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-
-
         [ForeignKey("Track")]
-        public int TR { get; set; }
+        public int Track_Id { get; set; }
         public Track Track { get; set; }
 
         [ForeignKey("Instructor")]
-        public int Inst { get; set; }
+        public int Inst_Id { get; set; }
         public Instructor Instructor { get; set; }
 
     }

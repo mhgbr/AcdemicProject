@@ -7,20 +7,20 @@ namespace MVCProject.Controllers
 {
     public class CourseController : Controller
     {
-        public ICourseService course { get; }
+        public ICourseService Course { get; }
         public CourseController(ICourseService _course)
         {
-            course = _course;
+            Course = _course;
         }
 
         public IActionResult GetAll()
         {
-            return View(course.GetAll());
+            return View(Course.GetAll());
         }
 
         public IActionResult GetById([FromRoute] int id)
         {
-            return View(course.GetById(id));
+            return View(Course.GetById(id));
         }
 
         [HttpGet]
@@ -34,7 +34,7 @@ namespace MVCProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                course.Create(crs);
+                Course.Create(crs);
                 return RedirectToAction("GetAll");
             }
             else
@@ -43,7 +43,7 @@ namespace MVCProject.Controllers
 
         public IActionResult Update(int id)
         {
-            Course crs = course.GetById(id);
+            Course crs = Course.GetById(id);
             return View(crs);
         }
 
@@ -51,7 +51,7 @@ namespace MVCProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                course.Update(id, crs);
+                Course.Update(id, crs);
                 return RedirectToAction("GetAll");
             }
             else
@@ -62,7 +62,7 @@ namespace MVCProject.Controllers
         {
             try
             {
-                course.Delete(id);
+                Course.Delete(id);
                 return RedirectToAction("GetAll");
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace MVCProject.Controllers
         {
             if (id == 0)
             {
-                Course crs = course.GetById(id);
+                Course crs = Course.GetById(id);
                 if (crs == null)
                     return Json(true);
                 else
@@ -85,7 +85,7 @@ namespace MVCProject.Controllers
             }
             else
             {
-                Course crs = course.GetByName(Name);
+                Course crs = Course.GetByName(Name);
                 if (crs == null)
                     return Json(true);
                 else

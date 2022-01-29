@@ -1,42 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
 using MVCProject.Service;
+using MVCProject.ViewModel;
 using System;
-using System.Collections.Generic;
 
 namespace MVCProject.Controllers
 {
     public class StudentController : Controller
     {
-        IStudentRepository StudentServices;
-        ITrackService TrackServices;
-        //IInstructorRepository InstServices;
-        //ICourseRepository CourseServices;
+        public IStudentService StudentServices { get; }
+        public ITrackService TrackServices { get; }
+        public IInstructorService InstructorServices { get; }
+        public IStdWithCrService IStdWithCrService { get; }
 
-        public StudentController(IStudentRepository _stdRepo, ITrackService _trkRepo /*, IInstructorRepository _instRepo*/)
+        public StudentController(IStudentService _stdRepo,
+            ITrackService _trkRepo, IInstructorService _InstructorServices, IStdWithCrService _IStdWithCrService)
         {
-            StudentServices = _stdRepo; //new StudentRepository();
+
+            StudentServices = _stdRepo;
             TrackServices = _trkRepo;
-            // courseServices = _crsRepo;
+            InstructorServices = _InstructorServices;
+            IStdWithCrService = _IStdWithCrService;
         }
 
         public IActionResult GetAll()
         {
-            return View(StudentServices.getAll());
+            return View(StudentServices.GetAll());
         }
 
         public IActionResult GetById([FromRoute] int id)
         {
-            return View(StudentServices.getById(id));
+            return View(StudentServices.GetById(id));
         }
 
         [HttpGet]
         public IActionResult Create()
         {
-            List<Track> tr = TrackServices.GetAll();
-            //ViewData["Trs"] = dept;
-            // List<Instructor> inst = InstructorServices.getAll();
-            //ViewData["insts"] = inst;
+            ViewData["Trs"] = TrackServices.GetAll();
+            ViewData["insts"] = InstructorServices.GetAll();
             Student std = new Student();
             return View(std);
         }
@@ -45,7 +46,7 @@ namespace MVCProject.Controllers
         [HttpPost]
         public IActionResult Create(Student newstd)
         {
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
                 //save db
                 StudentServices.Create(newstd);
@@ -54,39 +55,30 @@ namespace MVCProject.Controllers
                 return RedirectToAction("GetAll");
             }
 
-            List<Track> trs = TrackServices.GetAll();
-            ViewData["Trs"] = trs;
-            // List<Instructor> inst = InstructorServices.getAll();
-            //ViewData["insts"] = inst;
-            //Add
-            return View("Add", newstd);//html
+            ViewData["Trs"] = TrackServices.GetAll();
+            ViewData["insts"] = InstructorServices.GetAll();
+            return View(newstd);//html
         }
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-            List<Track> trs = TrackServices.GetAll();
-            ViewData["Trs"] = trs;
-            //List<Instructor>inst = InstructorServices.getAll();
-            //ViewData["insts"] = inst;
-            Student std = StudentServices.getById(id);
+            ViewData["Trs"] = TrackServices.GetAll();
+            ViewData["insts"] = InstructorServices.GetAll();
+            Student std = StudentServices.GetById(id);
             return View(std);
         }
         [HttpPost]
-        public IActionResult Update(int id, Student newStudent)
+        public IActionResult Update(Student newStudent)
         {
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
-
-                StudentServices.Update(id, newStudent);
-                return RedirectToAction("Index");
-
+                StudentServices.Update(newStudent);
+                return RedirectToAction("GetAll");
             }
-            List<Track> trs = TrackServices.GetAll();
-            ViewData["Trs"] = trs;
-            //List<Instructor> crs = InstructorServices.getAll();
-            //ViewData["inst"] = crs;
-            return View("Edit", newStudent);
+            ViewData["Trs"] = TrackServices.GetAll();
+            ViewData["insts"] = InstructorServices.GetAll();
+            return View(newStudent);
         }
 
 
@@ -99,17 +91,17 @@ namespace MVCProject.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", ex.InnerException.Message);
-                return View("Update");
+                ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                return View();
             }
         }
 
         public IActionResult NameExist(string Name, int id)
         {
+            Student std = StudentServices.GetByName(Name);
             //case Add New Student
             if (id == 0)
             {
-                Student std = StudentServices.getByName(Name);
                 if (std == null)
                     //true
                     return Json(true);
@@ -119,7 +111,6 @@ namespace MVCProject.Controllers
             }
             else  //edit
             {
-                Student std = StudentServices.getByName(Name);
                 if (std == null)
                     return Json(true); //update name with new value not exist before
                 else
@@ -135,27 +126,20 @@ namespace MVCProject.Controllers
         }
 
 
-        //public IActionResult getStudent(int id)
-        //{
-        //    Student std = context.Students.FirstOrDefault(s => s.ID == id);
-
-        //    StdWithCr crs =
-        //    context.StdWithCr.Include(c => c.Course).Include(ww => ww.Student).FirstOrDefault(ww => ww.tr == id);
-        //    StudentWithCrsDegreeVM stdVM = new StudentWithCrsDegreeVM();
-
-        //    stdVM.StudentName = crs.Student.Name;
-        //    stdVM.CrsName = crs.Course.Name;
-        //    stdVM.Degree = crs.Degree;
-        //    stdVM.Id = crs.Id;
-
-        //    return View(stdVM);
-        //}
-
-
+        public IActionResult getStudent(int id)
+        {
+            StdWithCr crs = IStdWithCrService.Get(id);
+            StudentWithCrsDegreeVM stdVM = new StudentWithCrsDegreeVM();
+            stdVM.StudentName = crs.Student.Name;
+            stdVM.CrsName = crs.Course.Name;
+            stdVM.Degree = crs.Degree;
+            stdVM.Id = crs.Id;
+            return View(stdVM);
+        }
 
         //public IActionResult getInstructors(int id)
         //{
-        //    List<Instructor> instModel = InstServices.getInstructorByID(id);
+        //    List<Instructor> instModel = StudentServices.GetAllInstById(id);
         //    return View("ShowAllInstructors", instModel);//connection betwen view with model
         //}
     }

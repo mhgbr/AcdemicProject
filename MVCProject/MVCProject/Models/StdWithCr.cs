@@ -10,13 +10,11 @@ namespace MVCProject.Models
 
         [ForeignKey("Course")]
         public int CrsId { get; set; }
+        public Course Course { get; set; }
 
         [ForeignKey("Student")]
         public int StId { get; set; }
-
         public Student Student { get; set; }
-        public Course Course { get; set; }
-
 
     }
 }
