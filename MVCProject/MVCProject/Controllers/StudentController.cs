@@ -44,7 +44,7 @@ namespace MVCProject.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Student newstd)
+        public IActionResult Save(Student newstd)///Save not create
         {
             if (ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace MVCProject.Controllers
         }
 
 
-        public IActionResult getStudent(int id)
+        public IActionResult GetStudent(int id)
         {
             StdWithCr crs = IStdWithCrService.Get(id);
             StudentWithCrsDegreeVM stdVM = new StudentWithCrsDegreeVM();
