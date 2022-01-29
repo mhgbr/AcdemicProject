@@ -10,8 +10,8 @@ namespace MVCProject.Service
         List<Instructor> GetAll();
         Instructor GetById(int id);
         Instructor GetByName(string name);
-        int Update(int id, Track newIns);
-        List<Instructor> GetAllById(int id);
-        void Update(int id, Instructor newins);
+        List<Instructor> GetAllInstById(int id);
+        int Update(Instructor newins);
+
     }
 }

@@ -7305,19 +7305,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Ahmed\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\samaa\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 80a53ccc48f351ebc124d090b5711d3536d75d99
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
       "projectPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
       "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
       "outputPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\samaa\\Downloads\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectName": "MVCProject",
+      "projectPath": "C:\\Users\\samaa\\Downloads\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "packagesPath": "C:\\Users\\samaa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\samaa\\Downloads\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
+>>>>>>> 80a53ccc48f351ebc124d090b5711d3536d75d99
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\samaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 80a53ccc48f351ebc124d090b5711d3536d75d99
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7384,7 +7402,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

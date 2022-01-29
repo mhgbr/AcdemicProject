@@ -23,7 +23,6 @@ namespace MVCProject.Models
         {
             optionsBuilder.
                 UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True");
-
         }
 
     }
