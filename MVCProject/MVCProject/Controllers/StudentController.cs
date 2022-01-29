@@ -44,7 +44,7 @@ namespace MVCProject.Controllers
 
 
         [HttpPost]
-        public IActionResult Create(Student newstd)///Save not create -> create not save ya mayadaw
+        public IActionResult SaveCreate(Student newstd)///Save not create -> create not save ya mayadaw
         {
             if (ModelState.IsValid)
             {
@@ -69,7 +69,7 @@ namespace MVCProject.Controllers
             return View(std);
         }
         [HttpPost]
-        public IActionResult Update(Student newStudent)
+        public IActionResult SaveUpdate(Student newStudent)
         {
             if (ModelState.IsValid)
             {
