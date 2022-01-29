@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -26,16 +25,14 @@ namespace MVCProject.Models
         public int Salary { get; set; }
 
         [Required]
-        [RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone Number")]
+        //[RegularExpression(pattern: "/^01[0125][0-9]{8}$/", ErrorMessage = "Invalid Number")]
         public int PhoneNumber { get; set; }
 
         [ForeignKey("Track")]
+        [Display(Name = "Track Name")]
         public int Track_Id { get; set; }
         public Track Track { get; set; }
-
-        internal List<Instructor> toList()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

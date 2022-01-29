@@ -140,7 +140,7 @@ namespace MVCProject.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("Inst_Id")
+                    b.Property<int?>("Inst_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -442,9 +442,7 @@ namespace MVCProject.Migrations
                 {
                     b.HasOne("MVCProject.Models.Instructor", "Instructor")
                         .WithMany()
-                        .HasForeignKey("Inst_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Inst_Id");
 
                     b.HasOne("MVCProject.Models.Track", "Track")
                         .WithMany()

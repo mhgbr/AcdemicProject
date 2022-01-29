@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVCProject.Migrations
 {
     [DbContext(typeof(DBFile))]
-    [Migration("20220129005740_edit")]
-    partial class edit
+    [Migration("20220129162511_sec")]
+    partial class sec
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -142,7 +142,7 @@ namespace MVCProject.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("Inst_Id")
+                    b.Property<int?>("Inst_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -444,9 +444,7 @@ namespace MVCProject.Migrations
                 {
                     b.HasOne("MVCProject.Models.Instructor", "Instructor")
                         .WithMany()
-                        .HasForeignKey("Inst_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("Inst_Id");
 
                     b.HasOne("MVCProject.Models.Track", "Track")
                         .WithMany()
