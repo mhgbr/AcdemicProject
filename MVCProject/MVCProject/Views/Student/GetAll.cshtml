@@ -19,6 +19,12 @@
         <th>
             Instructor
         </th>
+        <th>
+            Details
+        </th>
+        <th>
+            Edit
+        </th>
     </tr>
     @foreach (var item in Model)
     {
@@ -28,6 +34,9 @@
             <td>@item.Address</td>
             <td>@item.Track</td>
             <td>@item.Instructor</td>
+            <td> <a href="/Student/GetById/@item.Id" class="btn btn-danger">Details</a></td>
+            <td> <a href="/Student/Update/@item.Id" class="btn btn-primary">Edit</a></td>
         </tr>
+         
     }
 </table>
