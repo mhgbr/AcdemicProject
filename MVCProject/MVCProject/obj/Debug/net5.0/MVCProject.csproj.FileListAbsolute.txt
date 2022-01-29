@@ -1213,3 +1213,5 @@ C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\M
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\ref\MVCProject.dll
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.pdb
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.genruntimeconfig.cache
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\Update.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\GetById.cshtml.g.cs

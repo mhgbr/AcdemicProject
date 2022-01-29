@@ -16,7 +16,6 @@ namespace MVCProject.Controllers
         public StudentController(IStudentService _stdRepo,
             ITrackService _trkRepo, IInstructorService _InstructorServices, IStdWithCrService _IStdWithCrService)
         {
-
             StudentServices = _stdRepo;
             TrackServices = _trkRepo;
             InstructorServices = _InstructorServices;

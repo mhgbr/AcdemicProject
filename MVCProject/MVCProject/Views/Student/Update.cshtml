@@ -5,7 +5,15 @@
 }
 
 @{
-    SelectList tracks = new SelectList(ViewBag.Trs, Model.Track_Id);
+      SelectList tracks;
+    if(Model !=null)
+    {
+        tracks = new SelectList(ViewBag.Trs,"Id","Name",Model.Track_Id);
+    }
+    else
+    {
+        tracks = new SelectList(ViewBag.Trs,"Id","Name");
+    }
 }
 
 <h1>Update</h1>
@@ -37,9 +45,10 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <div>
-                <label asp-for="Track_Id">Track ID</label>
-                <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
-            </div>
+        <label asp-for="Track_Id"></label>
+        <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
+        <span class="text-danger" asp-validation-for="Track_Id"></span>
+    </div>
 
          @*   <div class="form-group">
                 <label asp-for="Track_Id" class="control-label"></label>
