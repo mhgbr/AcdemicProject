@@ -10,7 +10,7 @@ namespace MVCProject.Models
 
         [Display(Name = "Student Name")]
         [Required(ErrorMessage = "Name Is Required")]
-        [RegularExpression(pattern: "[a-zA-Z]{3,}",ErrorMessage = "name must be char only and more than 2 char")]
+        [RegularExpression(pattern: "[a-zA-Z]{3,}", ErrorMessage = "name must be char only and more than 2 char")]
         public string Name { get; set; }
 
         [Range(minimum: 20, maximum: 80)]
@@ -22,7 +22,7 @@ namespace MVCProject.Models
 
         [Required]
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
+        //[RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
         public int PhoneNumber { get; set; }
 
         [ForeignKey("Track")]
@@ -30,7 +30,7 @@ namespace MVCProject.Models
         public Track Track { get; set; }
 
         [ForeignKey("Instructor")]
-        public int Inst_Id { get; set; }
+        public int? Inst_Id { get; set; }
         public Instructor Instructor { get; set; }
 
     }

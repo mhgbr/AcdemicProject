@@ -37,8 +37,7 @@ namespace MVCProject.Controllers
                 Course.Create(crs);
                 return RedirectToAction("GetAll");
             }
-            else
-                return View(crs);
+            return View(crs);
         }
 
         public IActionResult Update(int id)
@@ -54,8 +53,7 @@ namespace MVCProject.Controllers
                 Course.Update(id, crs);
                 return RedirectToAction("GetAll");
             }
-            else
-                return View(crs);
+            return View(crs);
         }
 
         public IActionResult Delete(int id)
@@ -79,8 +77,7 @@ namespace MVCProject.Controllers
                 Course crs = Course.GetById(id);
                 if (crs == null)
                     return Json(true);
-                else
-                    return Json(false);
+                return Json(false);
 
             }
             else
@@ -92,8 +89,7 @@ namespace MVCProject.Controllers
                 {
                     if (crs.Id == id)
                         return Json(true);
-                    else
-                        return Json(false);
+                    return Json(false);
                 }
             }
         }

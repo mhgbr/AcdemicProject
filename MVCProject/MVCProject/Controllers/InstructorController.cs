@@ -32,8 +32,7 @@ namespace MVCProject.Controllers
             {
                 if (ins == null)
                     return Json(true);
-                else
-                    return Json(false);
+                return Json(false);
             }
             else           //edit
             {
@@ -43,61 +42,54 @@ namespace MVCProject.Controllers
                 {
                     if (ins.Id == id)
                         return Json(true);
-                    else
-                        return Json(false);
+                    return Json(false);
                 }
             }
         }
 
-        public IActionResult GetInstInTrack(int id)
+        public IActionResult GetInstInTrack([FromRoute] int id)
         {
             List<Instructor> gModel = InsRepo.GetAllInstById(id);
-            return PartialView("_", gModel);
+            return PartialView("_GetInstInTrack", gModel);
         }
 
         [HttpGet]
         public IActionResult Create()
         {
             ViewBag.tracks = TrackRepo.GetAll();
-            Instructor ins = new Instructor();
-            return View(ins);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Instructor newins)
+        public IActionResult Create(Instructor newstd)
         {
             if (ModelState.IsValid)
             {
-                InsRepo.Create(newins);
+                InsRepo.Create(newstd);
                 return RedirectToAction("GetAll");
             }
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
-            return View(newins);
+            ViewData["tracks"] = TrackRepo.GetAll();
+            return View(newstd);
         }
+
+
 
         [HttpGet]
         public IActionResult Update(int id)
         {
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
-
+            ViewBag.tracks = TrackRepo.GetAll();
             Instructor std = InsRepo.GetById(id);
             return View(std);
         }
         [HttpPost]
-        public IActionResult Update([FromRoute] int id, Instructor newins)
+        public IActionResult Update(Instructor newins)
         {
             if (ModelState.IsValid)
             {
                 InsRepo.Update(newins);
                 return RedirectToAction("GetAll");
             }
-
-            List<Track> tracks = TrackRepo.GetAll();
-            ViewBag.tracks = tracks;
+            ViewBag.tracks = TrackRepo.GetAll();
             return View(newins);
 
         }
@@ -114,5 +106,30 @@ namespace MVCProject.Controllers
                 return View();
             }
         }
+
+
+        //public IActionResult NameExsist(int id, string Name)
+        //{
+        //    Instructor instructore = InsRepo.GetByName(Name);
+        //    if (id == 0)
+        //    {
+        //        if (instructore == null)
+        //            return Json(true);
+        //        else
+        //            return Json(false);
+        //    }
+        //    else
+        //    {
+        //        if (instructore == null)
+        //            return Json(true);
+        //        else
+        //        {
+        //            if (id == instructore.Id)
+        //                return Json(true);
+        //            else
+        //                return Json(false);
+        //        }
+        //    }
+        //}
     }
 }

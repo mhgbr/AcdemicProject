@@ -16,7 +16,6 @@ namespace MVCProject.Controllers
         public StudentController(IStudentService _stdRepo,
             ITrackService _trkRepo, IInstructorService _InstructorServices, IStdWithCrService _IStdWithCrService)
         {
-
             StudentServices = _stdRepo;
             TrackServices = _trkRepo;
             InstructorServices = _InstructorServices;
@@ -25,6 +24,7 @@ namespace MVCProject.Controllers
 
         public IActionResult GetAll()
         {
+            ViewData["Trs"] = TrackServices.GetAll();
             return View(StudentServices.GetAll());
         }
 
@@ -32,29 +32,26 @@ namespace MVCProject.Controllers
         {
             return View(StudentServices.GetById(id));
         }
-
+        // Student/Create
         [HttpGet]
         public IActionResult Create()
         {
             ViewData["Trs"] = TrackServices.GetAll();
             ViewData["insts"] = InstructorServices.GetAll();
-            Student std = new Student();
-            return View(std);
+            return View();
         }
 
 
         [HttpPost]
-        public IActionResult SaveCreate(Student newstd)///Save not create -> create not save ya mayadaw
+        public IActionResult Create(Student newstd)///Save not create -> create not save ya mayadaw
         {
             if (ModelState.IsValid)
             {
                 //save db
                 StudentServices.Create(newstd);
-
                 //display index view
                 return RedirectToAction("GetAll");
             }
-
             ViewData["Trs"] = TrackServices.GetAll();
             ViewData["insts"] = InstructorServices.GetAll();
             return View(newstd);//html
@@ -69,7 +66,7 @@ namespace MVCProject.Controllers
             return View(std);
         }
         [HttpPost]
-        public IActionResult SaveUpdate(Student newStudent)
+        public IActionResult Update(Student newStudent)
         {
             if (ModelState.IsValid)
             {

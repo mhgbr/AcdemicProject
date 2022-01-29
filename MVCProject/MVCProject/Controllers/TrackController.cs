@@ -13,6 +13,8 @@ namespace pproject.Controllers
         {
             TrackRepo = trackRepo;
         }
+
+        // Track/GetAll
         public IActionResult GetAll()
         {
             return View(TrackRepo.GetAll());
@@ -37,10 +39,7 @@ namespace pproject.Controllers
                 TrackRepo.Create(Track);
                 return RedirectToAction("GetAll");
             }
-            else
-            {
-                return View(Track);
-            }
+            return View(Track);
         }
 
         [HttpGet]
@@ -57,10 +56,7 @@ namespace pproject.Controllers
                 TrackRepo.Update(track);
                 return RedirectToAction("GetAll");
             }
-            else
-            {
-                return View(track);
-            }
+            return View(track);
         }
 
         public IActionResult Delete([FromRoute] int id)
@@ -84,8 +80,7 @@ namespace pproject.Controllers
             {
                 if (track == null)
                     return Json(true);
-                else
-                    return Json(false);
+                return Json(false);
             }
             else
             {
@@ -95,8 +90,7 @@ namespace pproject.Controllers
                 {
                     if (id == track.Id)
                         return Json(true);
-                    else
-                        return Json(false);
+                    return Json(false);
                 }
             }
         }

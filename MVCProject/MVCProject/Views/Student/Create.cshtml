@@ -1,15 +1,19 @@
 ﻿@model Student
 
 @{
+    SelectList tracks;
+    if(Model !=null)
+    {
+        tracks = new SelectList(ViewBag.Trs,"Id","Name",Model.Track_Id);
+    }
+    else
+    {
+        tracks = new SelectList(ViewBag.Trs,"Id","Name");
+    }      
     Layout = "_Academic";
 }
-
-
-@{
-    SelectList tracks = new SelectList(ViewBag.Trs, Model.Track_Id);
-}
 <div class="container mt-3">
-    <form asp-action="SaveCreate" asp-controller="Student">
+    <form asp-action="Create" asp-controller="Student">
         <div>
             <label asp-for="Name">Name</label>
             <input asp-for="Name" class="form-control" placeholder="Enter name">
@@ -22,7 +26,7 @@
         </div>
         <div>
             <label asp-for="Address">Address</label>
-            <input asp-for="Address" class="form-control" placeholder="Enter your age!">
+            <input asp-for="Address" class="form-control" placeholder="Enter your Address!">
             <span asp-validation-for="Address" class="text-danger"></span> 
         </div>
         <div>
@@ -31,12 +35,13 @@
             <span asp-validation-for="PhoneNumber" class="text-danger"></span> 
         </div>
         <div>
-            <label asp-for="Track_Id">Track ID</label>
+            <label asp-for="Track_Id"></label>
             <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
+            <span class="text-danger" asp-validation-for="Track_Id"></span>
         </div>
-        <input type="submit" value="Add Student" class="btn btn-primary mt-3 mr-3"/>
+        <input type="submit" value="Create" class="btn btn-primary mt-3 mr-3"/>
     </form>
-        <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary mt-3 mr-3">Create</a><br />
+
 </div>
 @section Scripts{
     @*<script src="~/lib/jquery/dist/jquery.js"></script>*@

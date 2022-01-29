@@ -29,14 +29,7 @@ namespace MVCProject.Controllers
                 //map from vm to model
                 IdentityUser user = new IdentityUser();
                 user.UserName = account.UserName;
-                user = await UserManager.FindByEmailAsync(account.Email);
-                if (user == null)
-                    user.Email = account.Email;
-                else
-                {
-                    ModelState.AddModelError(string.Empty, "this email already exsist");
-                    return View(account);
-                }
+                user.Email = account.Email;
                 //save in db
                 IdentityResult result = await UserManager.CreateAsync(user, account.Password);
                 if (result.Succeeded)
@@ -46,9 +39,7 @@ namespace MVCProject.Controllers
                     return LocalRedirect(ReturnUrl);
                 }
                 foreach (var error in result.Errors)
-                {
                     ModelState.AddModelError(string.Empty, error.Description);
-                }
             }
             return View(account);
         }
@@ -73,12 +64,10 @@ namespace MVCProject.Controllers
                         await SignInManager.PasswordSignInAsync(user, account.Password, account.RememberMe, false);
                     if (result.Succeeded)
                         return LocalRedirect(ReturnUrl);
-                    else
-                        //present error to client that is resulted from error in password
-                        ModelState.AddModelError(string.Empty, "invalid password");
+                    //present error to client that is resulted from error in password
+                    ModelState.AddModelError(string.Empty, "invalid password");
                 }
-                else
-                    ModelState.AddModelError(string.Empty, "invalid account");
+                ModelState.AddModelError(string.Empty, "invalid account");
             }
             return View(account);
         }
@@ -90,6 +79,13 @@ namespace MVCProject.Controllers
             return RedirectToAction("Login");
         }
 
+        public async Task<IActionResult> EmailExsist(string Email)
+        {
+            IdentityUser user = await UserManager.FindByEmailAsync(Email);
+            if (user == null)
+                return Json(true);
+            return Json(false);
+        }
 
     }
 }

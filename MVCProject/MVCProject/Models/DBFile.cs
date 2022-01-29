@@ -22,9 +22,10 @@ namespace MVCProject.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.
-                //UseSqlServer("Data Source=.;Initial Catalog=AcdemicPro;Integrated Security=True");
-                //For ahmed only
-                UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=AcdemicPro;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+                UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True");
+                ////For ahmed only
+                //UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=team;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
     }
