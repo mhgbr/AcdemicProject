@@ -7305,23 +7305,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alli\\.nuget\\packages\\": {},
+    "C:\\Users\\Mayada\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectUniqueName": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
-      "projectPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "packagesPath": "C:\\Users\\Alli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
+      "projectPath": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "packagesPath": "C:\\Users\\Mayada\\.nuget\\packages\\",
+      "outputPath": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Alli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mayada\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

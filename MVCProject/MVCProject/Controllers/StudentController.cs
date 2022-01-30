@@ -32,6 +32,7 @@ namespace MVCProject.Controllers
         {
             return View(StudentServices.GetById(id));
         }
+
         // Student/Create
         [HttpGet]
         public IActionResult Create()
@@ -92,6 +93,14 @@ namespace MVCProject.Controllers
                 return View();
             }
         }
+        #region Mayada
+
+        //public IActionResult Delete(int id)
+        //{
+        //    return View(StudentServices.GetById(id));
+            
+        //}
+        #endregion
 
         public IActionResult Exisit(string Name, int id)
         {

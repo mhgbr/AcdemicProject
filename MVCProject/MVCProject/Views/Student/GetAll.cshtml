@@ -10,24 +10,13 @@
     <a asp-action="GetAll" asp-controller="Track" class="btn btn-success mb-3">Show Tracks</a>
     <table class="table table-bordered text-center" width="50%">
         <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Age
-            </th>
-            <th>
-                Address
-            </th>
-            <th>
-                Track
-            </th>
-            <th>
-                Details
-            </th>
-            <th>
-                Edit
-            </th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Track</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         @foreach (var item in Model)
         {
@@ -44,7 +33,17 @@
                 }
                 <td> <a href="/Student/GetById/@item.Id" class="btn btn-danger">Details</a></td>
                 <td> <a href="/Student/Update/@item.Id" class="btn btn-primary">Edit</a></td>
+                <td><a class="btn btn-success" asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id" onclick="ConfirmDelete(event)">Delete</a></td>
             </tr>
         }
     </table>
 </div>
+<script>
+    function ConfirmDelete(){
+        document.getElementById("")
+        var accept=confirm("Are You Sure?");
+        if(accept==false){
+            event.preventDefault();
+        }
+    }
+</script>
