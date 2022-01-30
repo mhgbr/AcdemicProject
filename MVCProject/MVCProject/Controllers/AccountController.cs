@@ -21,14 +21,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp(string ReturnUrl = "~/TrackController/GetAll")
+        public IActionResult SignUp(string ReturnUrl = "~/Track/GetAll")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> SignUp(RegisterVM account,
-            string ReturnUrl = "~/TrackController/GetAll")
+            string ReturnUrl = "~/Track/GetAll")
         {
             if (ModelState.IsValid)
             {
@@ -51,14 +51,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string ReturnUrl = "~/TrackController/GetAll")
+        public IActionResult Login(string ReturnUrl = "~/Track/GetAll")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM account,
-            string ReturnUrl = "~/TrackController/GetAll")
+            string ReturnUrl = "~/Track/GetAll")
         {
             if (ModelState.IsValid)
             {
@@ -94,9 +94,9 @@ namespace MVCProject.Controllers
             return Json(false);
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         [HttpGet]
-        public IActionResult SignUpAdmin(string ReturnUrl = "~/TrackController/GetAll")
+        public IActionResult SignUpAdmin(string ReturnUrl = "~/Track/GetAll")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             ViewData["listOfroles"] = RoleManager.Roles.Select(x => x.Name).ToList();
@@ -104,7 +104,7 @@ namespace MVCProject.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> SignUpAdmin(RegisterVM account, string roleName,
-            string ReturnUrl = "~/TrackController/GetAll")
+            string ReturnUrl = "~/Track/GetAll")
         {
             if (ModelState.IsValid)
             {

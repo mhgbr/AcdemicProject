@@ -98,7 +98,7 @@ namespace MVCProject.Controllers
         //public IActionResult Delete(int id)
         //{
         //    return View(StudentServices.GetById(id));
-            
+
         //}
         #endregion
 
