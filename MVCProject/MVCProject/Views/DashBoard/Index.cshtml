@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "_Academic";
+}
+
+    <section id="courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-1.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <a class="btn btn-primary" asp-action="GetAll" asp-controller="Student">Students</a>
+                </div>
+                <h3>Show Students Data</h3>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-2.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a class="btn btn-primary"asp-action="GetAll" asp-controller="Instructor">Instructors</a>
+                </div>
+
+                <h3>Show Instructors Data</h3>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-3.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a class="btn btn-primary"asp-action="courses" asp-controller="Home">Courses</a>
+                </div>
+
+                <h3>Show Courses Data</h3>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5" data-aos="zoom-in" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-1.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a class="btn btn-primary"asp-action="GetAll" asp-controller="Track">Tracks</a>
+                </div>
+                <h3>Show Tracks Data</h3>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-2.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a class="btn btn-primary" asp-action="about" asp-controller="Home">About</a>
+                </div>
+
+                <h3>About our Team</h3>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-start">
+            <div class="course-item">
+              <img src="~/assets/img/course-3.jpg" class="img-fluid" alt="...">
+              <div class="course-content">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <a class="btn btn-primary" asp-action="contact" asp-controller="Home">Contact</a>
+                </div>
+
+                <h3>Contact us</h3>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+         <!-- End Course Item-->
+      </div>
+    </section><!-- End Courses Section -->
+<style>
+    #footer {
+    position: relative !important;
+    }
+</style>

@@ -1462,14 +1462,12 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    color: #37423b;
     font-size: 14px;
     background: #eef0ef;
-    position: relative;
     bottom: 0%;
     width: 100%;
     height: auto;
-    margin: 80px 0 0 0;
+    margin: 60px 0 0 0;
     box-shadow: 0px 0 18px rgba(100, 100, 100, 0.08);
 }
 
@@ -1627,6 +1625,7 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
 
 .cell-hover {
     transition: 0.1s all;

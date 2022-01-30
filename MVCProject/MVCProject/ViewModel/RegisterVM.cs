@@ -22,6 +22,7 @@ namespace MVCProject.ViewModel
 
         [Required]
         [Display(Name = "Confirm Password")]
+        [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Remember Me")]

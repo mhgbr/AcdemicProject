@@ -9,7 +9,7 @@ namespace MVCProject.Service
         Course GetById(int id);
         Course GetByName(string name);
         int Create(Course course);
-        int Update(int id, Course New);
+        int Update(Course Newcrs);
         public int Delete(int id);
 
     }
