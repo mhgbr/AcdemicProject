@@ -1,0 +1,53 @@
+﻿@model MVCProject.ViewModel.RegisterVM
+
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "_Academic";
+
+}
+<div class="container mt-3">
+    <h1>SignUp</h1>
+    <hr />
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="SignUp">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <input type="hidden" value="@ViewBag.ReturnUrl" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check mt-1">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                    </label>
+                </div>
+                <div class="form-group mt-2">
+                    <input type="submit" value="Sing Up" class="btn btn-primary" style="border-radius: 50px;padding: 5px 20px;"/>
+                    <a asp-action="SignUpAdmin" asp-controller="Account" class="btn btn-link ms-2">SignUp as an Admin</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

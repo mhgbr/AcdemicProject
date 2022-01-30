@@ -25,6 +25,7 @@ namespace pproject.Controllers
             return View(TrackRepo.GetById(id));
         }
 
+        // Track/Create
         [HttpGet]
         public IActionResult Create()
         {
@@ -42,6 +43,7 @@ namespace pproject.Controllers
             return View(Track);
         }
 
+        // Track/Update
         [HttpGet]
         public IActionResult Update([FromRoute] int id)
         {
@@ -73,7 +75,7 @@ namespace pproject.Controllers
             }
         }
 
-        public IActionResult NameExisit(int id, string Name)
+        public IActionResult Exisit(int id, string Name)
         {
             var track = TrackRepo.GetByName(Name);
             if (id == 0)

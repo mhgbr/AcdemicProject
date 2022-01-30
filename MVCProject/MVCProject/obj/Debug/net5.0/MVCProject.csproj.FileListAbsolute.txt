@@ -1704,6 +1704,13 @@ C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razo
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\Update.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_GetInstInTrack.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUpAdmin.cshtml.g.cs
 >>>>>>> d34475dac6d844ebd1ec89d3840ec6de8cfad18c
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\Create.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetAll.cshtml.g.cs
@@ -1713,3 +1720,20 @@ D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicP
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\GetById.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\libman.json
+>>>>>>> c15f791c500627a64ba44a0fa6802ee11cd09e81
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\about.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\contact.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\courses.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Instractors.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\pricing.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic_Logged.cshtml.g.cs
+>>>>>>> 7533c72014c4eefe8031317466d654762d6fee34
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUpAdmin.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs

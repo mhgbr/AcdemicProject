@@ -108,7 +108,7 @@ namespace MVCProject.Controllers
         }
 
 
-        //public IActionResult NameExsist(int id, string Name)
+        //public IActionResult Exsist(int id, string Name)
         //{
         //    Instructor instructore = InsRepo.GetByName(Name);
         //    if (id == 0)

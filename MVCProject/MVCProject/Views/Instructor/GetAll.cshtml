@@ -1,38 +1,43 @@
 ﻿@model List<Instructor>
+@{
+    Layout = "_Academic";
+}
 
-<a asp-action="Create" asp-controller="Instructor" class="btn btn-primary mb-3">Add new Instructor</a>
-<table class="table table-dark table-striped text-center" width="50%">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Age
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            Salary
-        </th>
-        <th>
-            PhoneNumber
-        </th>
-        <th>
-            TrackId
-        </th>
-        
-    </tr>
-    @foreach (var item in Model)
-    {
+<div class="container mt-3">
+    <a asp-action="Create" asp-controller="Instructor" class="btn btn-primary mb-3">Add new Instructor</a>
+    <table class="table table-bordered text-center" width="50%">
         <tr>
-            <td>@item.Name</td>
-            <td>@item.Age</td>
-            <td>@item.Address</td>
-            <td>@item.Salary</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Track_Id</td>
-           
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Salary
+            </th>
+            <th>
+                PhoneNumber
+            </th>
+            <th>
+                TrackId
+            </th>
+        
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+                <td>@item.Salary</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Track_Id</td>
+           
+            </tr>
+        }
+    </table>
+</div>

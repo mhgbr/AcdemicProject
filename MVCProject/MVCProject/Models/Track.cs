@@ -10,7 +10,7 @@ namespace MVCProject.Models
 
         [Required]
         [Display(Name = "Tarck Name")]
-        [Remote(controller: "Track", action: "NameExisit",
+        [Remote(controller: "Track", action: "Exisit",
             AdditionalFields = "Id", ErrorMessage = "this name is already exsist")]
         public string Name { get; set; }
 
