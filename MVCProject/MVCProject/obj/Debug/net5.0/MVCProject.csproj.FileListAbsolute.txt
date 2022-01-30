@@ -1729,7 +1729,6 @@ C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razo
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\pricing.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic_Logged.cshtml.g.cs
-<<<<<<< HEAD
 >>>>>>> 7533c72014c4eefe8031317466d654762d6fee34
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
@@ -1738,7 +1737,6 @@ D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicP
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
-=======
 D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\appsettings.Development.json
 D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\appsettings.json
 D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\MVCProject.exe
@@ -1916,3 +1914,24 @@ D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\ref\MVCProj
 D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.pdb
 D:\Other\cmder\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.genruntimeconfig.cache
 >>>>>>> 2e576720f99124e6be44c2f7542fb5caf60faf93
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\libman.json
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUpAdmin.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\GetAll.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\about.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\contact.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\courses.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Instractors.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\pricing.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_GetInstInTrack.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\GetById.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\Update.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
+C:\Users\Dell\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetById.cshtml.g.cs

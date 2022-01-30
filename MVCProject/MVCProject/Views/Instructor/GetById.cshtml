@@ -1,0 +1,15 @@
+﻿@model Instructor
+
+@{
+    Layout = "_Academic";
+}
+<div class="container mt-3">
+    <h1>@Model.Name</h1>
+    <h3>@Model.Age</h3>
+    <h3>@Model.Address</h3>
+    <h3>@Model.Salary</h3>
+    <h3>@Model.PhoneNumber</h3>
+    <h3>@Model.Track_Id</h3>
+<a asp-action="GetAll" asp-controller="Instructor" class="btn btn-success">Back to instructor list</a>
+
+</div>

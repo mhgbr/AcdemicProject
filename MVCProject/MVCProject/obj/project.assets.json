@@ -7305,37 +7305,19 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\Ahmed\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Mayada\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 2e576720f99124e6be44c2f7542fb5caf60faf93
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "projectUniqueName": "C:\\Users\\Dell\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
       "projectName": "MVCProject",
-      "projectPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "packagesPath": "C:\\Users\\Ahmed\\.nuget\\packages\\",
-      "outputPath": "D:\\R@N\\Ahmed\\Pro\\certificates\\ITI\\Content\\ItI Menofia 3M\\11 ASP.Net MVC\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
-=======
-      "projectUniqueName": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "projectName": "MVCProject",
-      "projectPath": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
-      "packagesPath": "C:\\Users\\Mayada\\.nuget\\packages\\",
-      "outputPath": "D:\\Other\\cmder\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
->>>>>>> 2e576720f99124e6be44c2f7542fb5caf60faf93
+      "projectPath": "C:\\Users\\Dell\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dell\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\Mayada\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 2e576720f99124e6be44c2f7542fb5caf60faf93
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7394,6 +7376,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -7402,8 +7390,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Dell\\AcdemicProject\\MVCProject\\MVCProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
