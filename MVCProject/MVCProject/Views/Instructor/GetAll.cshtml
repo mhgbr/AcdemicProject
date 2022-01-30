@@ -8,6 +8,9 @@
     <table class="table table-bordered text-center" width="50%">
         <tr>
             <th>
+                Id
+            </th>
+            <th>
                 Name
             </th>
             <th>
@@ -25,19 +28,41 @@
             <th>
                 TrackId
             </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
         
         </tr>
         @foreach (var item in Model)
         {
             <tr>
+                <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Age</td>
                 <td>@item.Address</td>
                 <td>@item.Salary</td>
                 <td>@item.PhoneNumber</td>
                 <td>@item.Track_Id</td>
+                
+                <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="confirmDelete(@item.Id)" class="btn btn-danger">Delete</a></td>
            
             </tr>
         }
     </table>
 </div>
+
+<script>
+    function confirmDelete() 
+    {
+        let message = confirm("Are You Sure?");
+        if(message == false)
+            event.preventDefault();
+    }
+</script> 
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

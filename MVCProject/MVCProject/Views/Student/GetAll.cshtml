@@ -30,6 +30,7 @@
                         <td>@i.Name</td>
                     }
                 }
+
                 <td> <a asp-action="GetById" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-info">Details</a></td>
                 <td> <a asp-action="Update" asp-controller="Student" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
                 <td><a class="btn btn-danger" asp-action="Delete" asp-controller="Student" asp-route-id="@item.Id" onclick="ConfirmDelete(event)">Delete</a></td>
@@ -37,6 +38,7 @@
         }
     </table>
 </div>
+
 <script>
     function ConfirmDelete(){
         document.getElementById("")

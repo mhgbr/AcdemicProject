@@ -1,0 +1,31 @@
+﻿@model List<Course>
+@{
+    Layout = "_Academic";
+}
+
+<div class="container mt-3">
+    <a asp-action="Create" asp-controller="Course" class="btn btn-primary mb-3">Add new Course</a>
+    <table class="table table-bordered text-center" width="50%">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                TrackId
+            </th>
+        
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Duration</td>
+                <td>@item.TrackId</td>
+                
+            </tr>
+        }
+    </table>
+</div>

@@ -108,28 +108,6 @@ namespace MVCProject.Controllers
         }
 
 
-        //public IActionResult Exsist(int id, string Name)
-        //{
-        //    Instructor instructore = InsRepo.GetByName(Name);
-        //    if (id == 0)
-        //    {
-        //        if (instructore == null)
-        //            return Json(true);
-        //        else
-        //            return Json(false);
-        //    }
-        //    else
-        //    {
-        //        if (instructore == null)
-        //            return Json(true);
-        //        else
-        //        {
-        //            if (id == instructore.Id)
-        //                return Json(true);
-        //            else
-        //                return Json(false);
-        //        }
-        //    }
-        //}
+      
     }
 }
