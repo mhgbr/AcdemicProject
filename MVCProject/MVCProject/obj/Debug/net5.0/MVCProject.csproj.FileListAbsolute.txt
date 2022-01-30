@@ -1959,3 +1959,4 @@ C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\R
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
 C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\Create.cshtml.g.cs

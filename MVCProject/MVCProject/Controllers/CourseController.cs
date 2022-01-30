@@ -8,9 +8,11 @@ namespace MVCProject.Controllers
     public class CourseController : Controller
     {
         public ICourseService Course { get; }
-        public CourseController(ICourseService _course)
+        public ITrackService TrackServices { get; }
+        public CourseController(ICourseService _course, ITrackService _trkRepo)
         {
             Course = _course;
+            TrackServices = _trkRepo;
         }
 
         public IActionResult GetAll()
@@ -26,6 +28,7 @@ namespace MVCProject.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["Trs"] = TrackServices.GetAll();
             return View();
         }
 
@@ -37,6 +40,7 @@ namespace MVCProject.Controllers
                 Course.Create(crs);
                 return RedirectToAction("GetAll");
             }
+            ViewData["Trs"] = TrackServices.GetAll();
             return View(crs);
         }
 
