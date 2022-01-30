@@ -1712,3 +1712,4 @@ D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicP
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_GetInstInTrack.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\GetById.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\libman.json

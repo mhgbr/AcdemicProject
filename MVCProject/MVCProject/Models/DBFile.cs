@@ -24,8 +24,6 @@ namespace MVCProject.Models
             optionsBuilder.
 
                 UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True");
-                ////For ahmed only
-                //UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=team;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
     }
