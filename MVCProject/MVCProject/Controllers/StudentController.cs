@@ -89,8 +89,8 @@ namespace MVCProject.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty, ex.InnerException.Message);
-                return View();
+                ModelState.AddModelError("", ex.InnerException.Message);
+                return View("Update");
             }
         }
         #region Mayada

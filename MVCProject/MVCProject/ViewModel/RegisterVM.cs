@@ -22,6 +22,8 @@ namespace MVCProject.ViewModel
 
         [Required]
         [Display(Name = "Confirm Password")]
+        [DataType(DataType.Password)]
+		[Compare("Password",ErrorMessage = "Password and Confirm not matched")]
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Remember Me")]

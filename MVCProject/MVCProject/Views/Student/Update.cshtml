@@ -1,5 +1,6 @@
 ﻿@model MVCProject.Models.Student
 
+
 @{
     Layout = "_Academic";
     ViewData["Title"] = "Update";
@@ -48,25 +49,24 @@
             <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
             <span class="text-danger" asp-validation-for="Track_Id"></span>
         </div>
-
-             @*   <div class="form-group">
-                    <label asp-for="Track_Id" class="control-label"></label>
-                    <input asp-for="Track_Id" class="form-control" />
-                    <span asp-validation-for="Track_Id" class="text-danger"></span>
-                </div>*@
-
-            @*    <div class="form-group">
-                    <label asp-for="Inst_Id" class="control-label"></label>
-                    <input asp-for="Inst_Id" class="form-control" />
-                    <span asp-validation-for="Inst_Id" class="text-danger"></span>
-                </div>*@
-                <div class="form-group">
+                <div class="form-group mt-2">
                     <input type="submit" value="Edit" class="btn btn-warning mt-2 me-2" />
+                    <a asp-action="Delete" onclick="confirmDelete()" class="btn btn-danger mt-2 me-2">Delete</a>
                     <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary mt-2">Back</a>
                 </div>
             </form>
     </div>
+    </div>
 </div>
+
+<script>
+    function confirmDelete() 
+    {
+        let msg = confirm("Be Careful!.. you are going to delete student, Are U Sure?!");
+        if(msg == false)
+            event.preventDefault();
+    }
+</script> 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
