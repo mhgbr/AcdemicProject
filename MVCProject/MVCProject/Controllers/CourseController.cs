@@ -44,19 +44,23 @@ namespace MVCProject.Controllers
             return View(crs);
         }
 
+        [HttpGet]
         public IActionResult Update(int id)
         {
+            ViewData["Trs"] = TrackServices.GetAll();
             Course crs = Course.GetById(id);
             return View(crs);
         }
 
-        public IActionResult Update([FromRoute] int id, Course crs)
+        [HttpPost]
+        public IActionResult Update(Course crs)
         {
             if (ModelState.IsValid)
             {
-                Course.Update(id, crs);
+                Course.Update(crs);
                 return RedirectToAction("GetAll");
             }
+            ViewData["Trs"] = TrackServices.GetAll();
             return View(crs);
         }
 
