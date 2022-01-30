@@ -1938,3 +1938,24 @@ C:\Users\Mayada\Desktop\First Project\AcdemicProject\MVCProject\MVCProject\obj\D
 C:\Users\Mayada\Desktop\First Project\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
 C:\Users\Mayada\Desktop\First Project\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
 C:\Users\Mayada\Desktop\First Project\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\libman.json
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUpAdmin.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\about.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\contact.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\courses.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Home.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\Instractors.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Home\pricing.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\Create.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetAll.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetInstInTrack.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\Update.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_Academic.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_GetInstInTrack.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
+C:\Users\samaa\Downloads\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
