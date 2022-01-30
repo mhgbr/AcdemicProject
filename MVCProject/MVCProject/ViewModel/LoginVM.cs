@@ -6,7 +6,7 @@ namespace MVCProject.ViewModel
     {
         [Required]
         [Display(Name = "User Name")]
-        public string UserName { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

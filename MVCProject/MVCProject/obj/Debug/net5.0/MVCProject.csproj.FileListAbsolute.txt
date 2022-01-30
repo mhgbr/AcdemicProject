@@ -1542,3 +1542,10 @@ C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razo
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Student\Update.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Shared\_GetInstInTrack.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\GetAll.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Create.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\Update.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUp.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\GetAll.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Role\Create.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\SignUpAdmin.cshtml.g.cs

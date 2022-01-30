@@ -93,18 +93,15 @@ namespace MVCProject.Controllers
             }
         }
 
-        public IActionResult NameExist(string Name, int id)
+        public IActionResult Exisit(string Name, int id)
         {
             Student std = StudentServices.GetByName(Name);
             //case Add New Student
             if (id == 0)
             {
                 if (std == null)
-                    //true
                     return Json(true);
-                else //name exists
-                     //false
-                    return Json(false);
+                return Json(false); //name exists
             }
             else  //edit
             {
@@ -112,17 +109,14 @@ namespace MVCProject.Controllers
                     return Json(true); //update name with new value not exist before
                 else
                 {
-                    //id = id parameter ==> true
                     if (std.Id == id)
-                        return Json(true);
-                    else
-                        return Json(false);
+                        return Json(true); //update
+                    return Json(false);
                 }
-
             }
         }
 
-
+        // Student/GetStudent
         public IActionResult GetStudent(int id)
         {
             StdWithCr crs = IStdWithCrService.Get(id);

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MVCProject.Models
@@ -10,7 +11,10 @@ namespace MVCProject.Models
 
         [Display(Name = "Student Name")]
         [Required(ErrorMessage = "Name Is Required")]
-        [RegularExpression(pattern: "[a-zA-Z]{3,}", ErrorMessage = "name must be char only and more than 2 char")]
+        [RegularExpression(pattern: "[a-zA-Z]{3,}",
+            ErrorMessage = "name must be char only and more than 2 char")]
+        [Remote(controller: "Student", action: "Exisit",
+            AdditionalFields = "Id", ErrorMessage = "this name is already exsist")]
         public string Name { get; set; }
 
         [Range(minimum: 20, maximum: 80)]
