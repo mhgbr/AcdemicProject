@@ -1,43 +1,50 @@
 ﻿@model List<Student>
 <!--Strong Type View-->
 
-<a asp-action="Create" asp-controller="Student" class="btn btn-primary mb-3">Add new Student</a>
-<table class="table table-dark table-striped text-center" width="50%">
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Age
-        </th>
-        <th>
-            Address
-        </th>
-        <th>
-            Track
-        </th>
-        <th>
-            Details
-        </th>
-        <th>
-            Edit
-        </th>
-    </tr>
-    @foreach (var item in Model)
-    {
+@{
+    Layout = "_Academic";
+}
+
+<div class="container mt-3">
+    <a asp-action="Create" asp-controller="Student" class="btn btn-primary mb-3">Add new Student</a>
+    <a asp-action="GetAll" asp-controller="Track" class="btn btn-success mb-3">Show Tracks</a>
+    <table class="table table-bordered text-center" width="50%">
         <tr>
-            <td>@item.Name</td>
-            <td>@item.Age</td>
-            <td>@item.Address</td>
-            @foreach(var i in ViewBag.Trs)
-            {
-                if(i.Id == item.Track_Id)
-                {
-                    <td>@i.Name</td>
-                }
-            }
-            <td> <a href="/Student/GetById/@item.Id" class="btn btn-danger">Details</a></td>
-            <td> <a href="/Student/Update/@item.Id" class="btn btn-primary">Edit</a></td>
+            <th>
+                Name
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Track
+            </th>
+            <th>
+                Details
+            </th>
+            <th>
+                Edit
+            </th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+                @foreach(var i in ViewBag.Trs)
+                {
+                    if(i.Id == item.Track_Id)
+                    {
+                        <td>@i.Name</td>
+                    }
+                }
+                <td> <a href="/Student/GetById/@item.Id" class="btn btn-danger">Details</a></td>
+                <td> <a href="/Student/Update/@item.Id" class="btn btn-primary">Edit</a></td>
+            </tr>
+        }
+    </table>
+</div>

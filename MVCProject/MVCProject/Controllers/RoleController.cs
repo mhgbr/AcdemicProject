@@ -16,7 +16,7 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
-        public  IActionResult GetAll()
+        public IActionResult GetAll()
         {
             List<string> roleList = RoleManager.Roles.Select(x => x.Name).ToList();
             return View(roleList);

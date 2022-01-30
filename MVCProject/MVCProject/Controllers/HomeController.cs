@@ -24,6 +24,31 @@ namespace MVCProject.Controllers
             return View();
         }
 
+        public IActionResult Home()
+        {
+            return View();
+        }
+        public IActionResult courses()
+        {
+            return View();
+        }
+        public IActionResult Instractors()
+        {
+            return View();
+        }
+        public IActionResult pricing()
+        {
+            return View();
+        }
+        public IActionResult about()
+        {
+            return View();
+        }
+        public IActionResult contact()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
