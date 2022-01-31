@@ -34,13 +34,10 @@ namespace MVCProject.Service
             return Context.SaveChanges();
         }
 
-        public int Update(int id, Course New)
+        public int Update(Course Newcrs)
         {
-            Course Old = Context.Courses.FirstOrDefault(c => c.Id == id);
-            Old.Id = id;
-            Old.Name = New.Name;
-            Old.Duration = New.Duration;
-            Old.TrackId = New.TrackId;
+            Context.Update(Newcrs);
+
             return Context.SaveChanges();
         }
 

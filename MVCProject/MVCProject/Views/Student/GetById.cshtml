@@ -2,15 +2,30 @@
     Layout = "_Academic";
 }
 <div class="container mt-3">
-    <h1>Name is:@Model.Name</h1>
+    <h1>Name: @Model.Name</h1>
     <input type="hidden" value="@Model.Id" />
-    <h3>Age:@Model.Age</h3>
-    <h3>Track:@Model.Track_Id</h3>
-    <h3>Address:@Model.Address</h3>
-    <h3>Phone Number:@Model.PhoneNumber</h3>
+<<<<<<< HEAD
+    <h3>@Model.Age</h3>
+    <h3>@Model.Track_Id</h3>
+    <h3>@Model.Address</h3>
+    <h3>@Model.PhoneNumber</h3>
+
+    <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary">Back</a>
+</div>
+
+
+<a asp-action="GetAll" asp-controller="Student" class="btn btn-success">Back to student list</a>
+
+
+=======
+    <h3>Age: @Model.Age</h3>
+    <h3>Track: @Model.Track_Id</h3>
+    <h3>Address: @Model.Address</h3>
+    <h3>Phone Number: @Model.PhoneNumber</h3>
     <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary">Back</a>
     <a asp-action="GetAll" asp-controller="Student" class="btn btn-success">Back to student list</a>
 </div><br /><br />
+>>>>>>> 0d8d0be4df4120f66bdccf6b762ce628bc86d4ca
 
  
 

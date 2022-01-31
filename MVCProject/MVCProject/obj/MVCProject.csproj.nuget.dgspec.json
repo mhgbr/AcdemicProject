@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DbBack\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj": {}
+    "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj": {}
   },
   "projects": {
-    "D:\\DbBack\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj": {
+    "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DbBack\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "projectUniqueName": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
         "projectName": "MVCProject",
-        "projectPath": "D:\\DbBack\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
+        "projectPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\MVCProject.csproj",
         "packagesPath": "C:\\Users\\Alli\\.nuget\\packages\\",
-        "outputPath": "D:\\DbBack\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
+        "outputPath": "C:\\Users\\Alli\\Desktop\\AcdemicProject\\MVCProject\\MVCProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
