@@ -2168,7 +2168,6 @@ D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicP
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\GetAll.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\GetById.cshtml.g.cs
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetById.cshtml.g.cs
-<<<<<<< HEAD
 >>>>>>> 4e21ce62f1873b29cc64f7fdceae9dca04a91a9f
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\Create.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Course\GetAll.cshtml.g.cs
@@ -2177,7 +2176,6 @@ C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razo
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\DashBoard\Index.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Instructor\GetById.cshtml.g.cs
 C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\ErrorPage.cshtml.g.cs
-=======
 C:\Users\Mayada\Desktop\Courses Project\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Mayada\Desktop\Courses Project\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\appsettings.json
 C:\Users\Mayada\Desktop\Courses Project\AcdemicProject\MVCProject\MVCProject\bin\Debug\net5.0\libman.json
