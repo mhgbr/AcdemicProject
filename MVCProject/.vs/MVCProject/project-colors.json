@@ -5,11 +5,14 @@
       "ProjectGuid": "9169deaa-4a67-4893-876a-aa0231a8a990",
       "DisplayName": "MVCProject",
       "ColorIndex": 0
+<<<<<<< HEAD
     },
     "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+=======
+>>>>>>> f697d823d2dc3026aa08dc8a4781176b0052fea1
     }
   },
   "NextColorIndex": 1
