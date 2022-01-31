@@ -29,8 +29,11 @@ namespace MVCProject.Controllers
             return View(StudentServices.GetAll());
         }
 
+        // Student/GetById
         public IActionResult GetById([FromRoute] int id)
         {
+            ViewData["Trs"] = TrackServices.GetAll();
+            ViewData["IStdWithCr"] = IStdWithCrService.GetAll();
             return View(StudentServices.GetById(id));
         }
 

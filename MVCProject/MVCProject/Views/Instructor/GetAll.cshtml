@@ -25,8 +25,14 @@
                 <td>@item.Age</td>
                 <td>@item.Address</td>
                 <td>@item.Salary</td>
-                <td>@item.PhoneNumber</td>
-                <td>@item.Track_Id</td>
+                <td>+20 @item.PhoneNumber</td>
+                @foreach(var i in ViewBag.trackName)
+                {
+                if(i.Id == item.Track_Id)
+                {
+                    <td>@i.Name</td>
+                }
+                }
                 <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
                 <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
            

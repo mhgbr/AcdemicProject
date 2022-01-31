@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MVCProject.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace MVCProject.Service
@@ -11,6 +12,11 @@ namespace MVCProject.Service
         public StdWithCrService(DBFile context)
         {
             Context = context;
+        }
+
+        public List<StdWithCr> GetAll()
+        {
+            return Context.StdWithCrs.ToList();
         }
         public StdWithCr Get(int id)
         {

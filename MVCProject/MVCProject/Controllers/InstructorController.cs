@@ -17,6 +17,7 @@ namespace MVCProject.Controllers
         }
         public IActionResult GetAll()
         {
+            ViewData["trackName"] = TrackRepo.GetAll();
             return View(InsRepo.GetAll());
         }
 

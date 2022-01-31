@@ -1,4 +1,5 @@
 ﻿using MVCProject.Models;
+using System.Collections.Generic;
 
 namespace MVCProject.Service
 {
@@ -7,5 +8,6 @@ namespace MVCProject.Service
         DBFile Context { get; }
 
         StdWithCr Get(int id);
+        List<StdWithCr> GetAll();
     }
 }
