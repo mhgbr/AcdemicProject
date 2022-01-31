@@ -71,7 +71,7 @@ namespace pproject.Controllers
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.InnerException.Message);
-                return View("Update");
+                return View("ErrorPage");
             }
         }
 

@@ -7,34 +7,15 @@
     <a asp-action="Create" asp-controller="Instructor" class="btn btn-primary mb-3">Add new Instructor</a>
     <table class="table table-bordered text-center" width="50%">
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Age
-            </th>
-            <th>
-                Address
-            </th>
-            <th>
-                Salary
-            </th>
-            <th>
-                PhoneNumber
-            </th>
-            <th>
-                TrackId
-            </th>
-            <th>
-                Edit
-            </th>
-            <th>
-                Delete
-            </th>
-        
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Salary</th>
+            <th>PhoneNumber</th>
+            <th>TrackId</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         @foreach (var item in Model)
         {

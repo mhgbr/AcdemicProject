@@ -26,7 +26,6 @@ namespace MVCProject
 
             services.AddDbContext<DBFile>(
                 option => option.UseSqlServer(Configuration.GetConnectionString("cs")));
-            services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True"));
 
             //inject user manager - role manager - signin manager && add all store class that deal with database
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();

@@ -14,7 +14,8 @@ namespace MVCProject.Controllers
         public IStdWithCrService IStdWithCrService { get; }
 
         public StudentController(IStudentService _stdRepo,
-            ITrackService _trkRepo, IInstructorService _InstructorServices, IStdWithCrService _IStdWithCrService)
+            ITrackService _trkRepo, IInstructorService _InstructorServices,
+            IStdWithCrService _IStdWithCrService)
         {
             StudentServices = _stdRepo;
             TrackServices = _trkRepo;
@@ -98,7 +99,7 @@ namespace MVCProject.Controllers
         //public IActionResult Delete(int id)
         //{
         //    return View(StudentServices.GetById(id));
-            
+
         //}
         #endregion
 

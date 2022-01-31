@@ -22,8 +22,8 @@
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Update" asp-controller="Student" >
+                <div asp-validation-summary="All" class="text-danger"></div>
                 <input asp-for="Id" type="hidden" class="form-control"/>
-                @*<div asp-validation-summary="All" class="text-danger"></div>*@
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
@@ -45,28 +45,18 @@
                     <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                 </div>
                 <div>
-            <label asp-for="Track_Id"></label>
-            <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
-            <span class="text-danger" asp-validation-for="Track_Id"></span>
-        </div>
+                    <label asp-for="Track_Id"></label>
+                    <select asp-for="Track_Id" asp-items="tracks" class="form-control"></select>
+                    <span class="text-danger" asp-validation-for="Track_Id"></span>
+                </div>
                 <div class="form-group mt-2">
                     <input type="submit" value="Edit" class="btn btn-warning mt-2 me-2" />
-                    <a asp-action="Delete" onclick="confirmDelete()" class="btn btn-danger mt-2 me-2">Delete</a>
                     <a asp-action="GetAll" asp-controller="Student" class="btn btn-secondary mt-2">Back</a>
                 </div>
             </form>
-    </div>
+        </div> 
     </div>
 </div>
-
-<script>
-    function confirmDelete() 
-    {
-        let msg = confirm("Be Careful!.. you are going to delete student, Are U Sure?!");
-        if(msg == false)
-            event.preventDefault();
-    }
-</script> 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

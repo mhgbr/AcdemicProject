@@ -37,7 +37,7 @@ namespace MVCProject.Service
         public int Update(Course Newcrs)
         {
             Context.Update(Newcrs);
-           
+
             return Context.SaveChanges();
         }
 
