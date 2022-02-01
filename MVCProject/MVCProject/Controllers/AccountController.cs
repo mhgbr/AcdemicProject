@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MVCProject.ViewModel;
 using System.Linq;
@@ -20,14 +21,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp(string ReturnUrl = "~/Track/GetAll")
+        public IActionResult SignUp(string ReturnUrl = "~/Account/Login")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> SignUp(RegisterVM account,
-            string ReturnUrl = "~/Track/GetAll")
+            string ReturnUrl = "~/Account/Login")
         {
             if (ModelState.IsValid)
             {
@@ -50,14 +51,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string ReturnUrl = "~/Track/GetAll")
+        public IActionResult Login(string ReturnUrl = "~/DashBoard")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM account,
-            string ReturnUrl = "~/Track/GetAll")
+            string ReturnUrl = "~/DashBoard")
         {
             if (ModelState.IsValid)
             {
@@ -94,43 +95,46 @@ namespace MVCProject.Controllers
         }
 
         //[Authorize(Roles = "admin")]
+        public async Task<IActionResult> AuthorizeUser()
+        {
+            ViewData["listOfAdmin"] = await UserManager.GetUsersInRoleAsync("admin");
+            ViewData["listOfInstructor"] = await UserManager.GetUsersInRoleAsync("instructor");
+            ViewData["listOfHr"] = await UserManager.GetUsersInRoleAsync("hr");
+            ViewData["listOfStudent"] = await UserManager.GetUsersInRoleAsync("student");
+            return View();
+        }
+
+        //[Authorize(Roles = "admin")]
         [HttpGet]
-        public IActionResult SignUpAdmin(string ReturnUrl = "~/Track/GetAll")
+        public IActionResult SignUpAdmin(string ReturnUrl = "~/Account/AuthorizeUser")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             ViewData["listOfroles"] = RoleManager.Roles.Select(x => x.Name).ToList();
+            ViewData["listOfUser"] = UserManager.Users.Select(x => x.UserName).ToList();
             return View("SignUpAdmin");
         }
         [HttpPost]
-        public async Task<IActionResult> SignUpAdmin(RegisterVM account, string roleName,
-            string ReturnUrl = "~/Track/GetAll")
+        public async Task<IActionResult> SignUpAdmin(string name, string roleName,
+            string ReturnUrl = "~/Account/AuthorizeUser")
         {
-            if (ModelState.IsValid)
+            IdentityUser user = await UserManager.FindByNameAsync(name);
+            //save in db
+            if (user != null)
             {
-                //map from vm to model
-                IdentityUser user = new IdentityUser();
-                user.UserName = account.Name;
-                user.Email = account.Email;
-                //save in db
-                IdentityResult result = await UserManager.CreateAsync(user, account.Password);
-                if (result.Succeeded)
+                //add roles
+                IdentityResult role = await UserManager.AddToRoleAsync(user, roleName);
+                if (role.Succeeded)
                 {
-                    //add roles
-                    IdentityResult role = await UserManager.AddToRoleAsync(user, roleName);
-                    if (role.Succeeded)
-                    {
-                        //create cookie for registeration
-                        await SignInManager.SignInAsync(user, account.RememberMe);
-                        return LocalRedirect(ReturnUrl);
-                    }
-                    ModelState.AddModelError(string.Empty, "no role found");
+                    return LocalRedirect(ReturnUrl);
                 }
-                foreach (var error in result.Errors)
-                    ModelState.AddModelError(string.Empty, error.Description);
+                ModelState.AddModelError(string.Empty, "no role found");
             }
+            ModelState.AddModelError(string.Empty, "no user found");
             ViewData["listOfroles"] = RoleManager.Roles.Select(x => x.Name).ToList();
-            return View(account);
+            ViewData["listOfUser"] = UserManager.Users.Select(x => x.UserName).ToList();
+            return View();
         }
+
 
 
 

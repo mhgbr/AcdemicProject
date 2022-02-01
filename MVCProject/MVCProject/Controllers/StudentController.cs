@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
 using MVCProject.Service;
 using MVCProject.ViewModel;
 using System;
+using System.Linq;
 
 namespace MVCProject.Controllers
 {
@@ -12,16 +14,24 @@ namespace MVCProject.Controllers
         public ITrackService TrackServices { get; }
         public IInstructorService InstructorServices { get; }
         public IStdWithCrService IStdWithCrService { get; }
+        public UserManager<IdentityUser> UserManager { get; }
+        public SignInManager<IdentityUser> SignInManager { get; }
+        public RoleManager<IdentityRole> RoleManager { get; }
 
         public StudentController(IStudentService _stdRepo,
             ITrackService _trkRepo, IInstructorService _InstructorServices,
-            IStdWithCrService _IStdWithCrService)
+            IStdWithCrService _IStdWithCrService, UserManager<IdentityUser> _UserManager,
+            SignInManager<IdentityUser> _SignInManager, RoleManager<IdentityRole> _RoleManager)
         {
             StudentServices = _stdRepo;
             TrackServices = _trkRepo;
             InstructorServices = _InstructorServices;
             IStdWithCrService = _IStdWithCrService;
+            UserManager = _UserManager;
+            SignInManager = _SignInManager;
+            RoleManager = _RoleManager;
         }
+
 
         public IActionResult GetAll()
         {
@@ -41,6 +51,7 @@ namespace MVCProject.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["listOfUser"] = UserManager.Users.Select(x => x.UserName).ToList();
             ViewData["Trs"] = TrackServices.GetAll();
             ViewData["insts"] = InstructorServices.GetAll();
             return View();
@@ -97,14 +108,6 @@ namespace MVCProject.Controllers
                 return View("Update");
             }
         }
-        #region Mayada
-
-        //public IActionResult Delete(int id)
-        //{
-        //    return View(StudentServices.GetById(id));
-
-        //}
-        #endregion
 
         public IActionResult Exisit(string Name, int id)
         {

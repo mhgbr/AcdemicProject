@@ -17,6 +17,7 @@ namespace MVCProject.Controllers
 
         public IActionResult GetAll()
         {
+            ViewBag.tracks = TrackServices.GetAll();
             return View(Course.GetAll());
         }
 
