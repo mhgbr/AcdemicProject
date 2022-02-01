@@ -26,7 +26,6 @@ namespace MVCProject
 
             services.AddDbContext<DBFile>(
                 option => option.UseSqlServer(Configuration.GetConnectionString("cs")));
-            services.AddDbContext<DBFile>(option => option.UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True"));
 
             //inject user manager - role manager - signin manager && add all store class that deal with database
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
@@ -47,10 +46,12 @@ namespace MVCProject
         {
             if (env.IsDevelopment())
             {
+
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                app.UseStatusCodePagesWithRedirects("/Home/Error");
                 app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
@@ -65,7 +66,7 @@ namespace MVCProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}");
             });
         }
     }

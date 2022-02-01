@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MVCProject.ViewModel;
 using System.Linq;
@@ -51,14 +50,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string ReturnUrl = "/Dashboard/index")
+        public IActionResult Login(string ReturnUrl = "~/DashBoard/Index")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM account,
-            string ReturnUrl = "~/Dashboard/index")
+            string ReturnUrl = "~/DashBoard/Index")
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +93,7 @@ namespace MVCProject.Controllers
             return Json(false);
         }
 
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult SignUpAdmin(string ReturnUrl = "~/Account/Login")
         {
@@ -104,7 +103,7 @@ namespace MVCProject.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> SignUpAdmin(RegisterVM account, string roleName,
-            string ReturnUrl = "~/Account/Login")
+            string ReturnUrl = "~~/Account/Login")
         {
             if (ModelState.IsValid)
             {

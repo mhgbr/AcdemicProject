@@ -3,6 +3,7 @@
     Layout = "_Academic";
 }
 
+
 <div class="container mt-2">
     <a asp-controller="Track" asp-action="Create" class="btn btn-primary mb-2">Add New</a>
     <table class="table table-bordered text-center" width="50%">
@@ -13,9 +14,10 @@
                 <th style="text-align: center">Manager Name</th>
                 <th style="text-align: center">Update</th>
                 <th style="text-align: center">Info</th>
+                <th style="text-align: center">Delete</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody>   
                 @foreach(var item in Model)
                 {
                     <tr>
@@ -23,35 +25,39 @@
                         <td>@item.Name</td>
                         <td>@item.Manager</td>
                         <td class="text-center">
-                            <a asp-controller="Track" asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">
+                            <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">
                                 Edit
                             </a>
                         </td>
                         <td class="text-center">
-                            <a onclick="Details(@item.Id)" class="btn btn-info">
-                                Show Instructors
-                            </a>
+                            <a onclick="Details(@item.Id)" class="btn btn-primary">Show Instructors</a>
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Delete" asp-route-id="@item.Id"
+                            onclick="confirmDelete()" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
                 }
         </tbody>
     </table>
-    <div class="d-grid gap-2 col-6 mx-auto mt-1">
-    </div>
-
-
     <div id="div1" class="mt-2"></div>
 </div>
 <script>
+    function confirmDelete() 
+    {
+        let message = confirm("Are You Sure?");
+        if(message == false)
+            event.preventDefault();
+    }
 
     function Details(id)
     {
         $.ajax({
             url : '/Instructor/GetInstInTrack/' + id,
-            //data : { 'id' : id },
             success : function(result) {              
                 $("#div1").html(result);
             }
         });
     };
 </script>
+

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Controllers
 {
+    //[Authorize(Roles = "admin")]
     public class RoleController : Controller
     {
         public RoleManager<IdentityRole> RoleManager { get; }

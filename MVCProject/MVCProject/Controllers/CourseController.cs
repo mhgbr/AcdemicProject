@@ -73,7 +73,7 @@ namespace MVCProject.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("Exception", ex.InnerException.Message);//
+                ModelState.AddModelError("Exception", ex.InnerException.Message);
                 return View("GetAll");
             }
         }
