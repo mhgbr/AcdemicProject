@@ -1,25 +1,43 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVCProject.Models;
 using MVCProject.Service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MVCProject.Controllers
 {
+    
     public class InstructorController : Controller
     {
         public IInstructorService InsRepo { get; }
         public ITrackService TrackRepo { get; }
-        public InstructorController(IInstructorService _InsRepo, ITrackService _TrackRepo)
+        public UserManager<IdentityUser> UserManager { get; }
+        public SignInManager<IdentityUser> SignInManager { get; }
+        public RoleManager<IdentityRole> RoleManager { get; }
+        public InstructorController(IInstructorService _InsRepo,
+            ITrackService _TrackRepo, UserManager<IdentityUser> _UserManager,
+            SignInManager<IdentityUser> _SignInManager, RoleManager<IdentityRole> _RoleManager)
         {
             InsRepo = _InsRepo;
             TrackRepo = _TrackRepo;
-        }
-        public IActionResult GetAll()
-        {
-            return View(InsRepo.GetAll());
+            UserManager = _UserManager;
+            SignInManager = _SignInManager;
+            RoleManager = _RoleManager;
         }
 
+
+
+        [Authorize(Roles = "admin")]
+        public IActionResult GetAll()
+        {
+            ViewData["trackName"] = TrackRepo.GetAll();
+            return View(InsRepo.GetAll());
+        }
         public IActionResult GetById([FromRoute] int id)
         {
             return View(InsRepo.GetById(id));
@@ -49,13 +67,16 @@ namespace MVCProject.Controllers
 
         public IActionResult GetInstInTrack([FromRoute] int id)
         {
+            ViewBag.tracks = TrackRepo.GetAll();
             List<Instructor> gModel = InsRepo.GetAllInstById(id);
             return PartialView("_GetInstInTrack", gModel);
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            //user.Include(u => u.Roles)
+            ViewData["listOfUser"] = await UserManager.GetUsersInRoleAsync("instructor");
             ViewBag.tracks = TrackRepo.GetAll();
             return View();
         }

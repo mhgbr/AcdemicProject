@@ -13,42 +13,27 @@
             <form asp-action="SignUpAdmin">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" value="@ViewBag.ReturnUrl" />
+
                 <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
-                    <span asp-validation-for="Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Password" class="control-label"></label>
-                    <input asp-for="Password" class="form-control" />
-                    <span asp-validation-for="Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ConfirmPassword" class="control-label"></label>
-                    <input asp-for="ConfirmPassword" class="form-control" />
-                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    <label for="Name" >Select User</label>
+                    <select name="Name" id="Name" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfUser)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="roleName" >Select Role</label>
                     <select name="roleName" id="roleName" class="form-select form-select-lg mb-3 ml-4">
-                        @foreach(string item in ViewBag.listOfroles)
+                        @foreach(var item in ViewBag.listOfroles)
                         {
                             <option value="@item" selected>@item</option>
                         }
                     </select>
-                    </div>
-
-                <div class="form-group form-check mt-1">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
-                    </label>
                 </div>
+
                 <div class="form-group mt-2">
                     <input type="submit" value="Create" class="btn btn-primary me-3" style="border-radius: 50px;padding: 5px 20px;"/>
                     <a asp-action="" class="btn btn-secondary p-1 pe-3 ps-3">Back</a>

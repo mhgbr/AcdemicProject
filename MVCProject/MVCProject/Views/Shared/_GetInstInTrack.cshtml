@@ -7,17 +7,23 @@
         <th>Address</th>
         <th>Salary</th>
         <th>PhoneNumber</th>
-        <th>TrackId</th>
+        <th>Track Name</th>
     </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Age</td>
-            <td>@item.Address</td>
-            <td>@item.Salary</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Track_Id</td>
-        </tr>
-    }
+    <tr>
+            @foreach (var item in Model)
+            {
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+                <td>@item.Address</td>
+                <td>@item.Salary</td>
+                <td>+20 @item.PhoneNumber</td>
+                @foreach(var i in ViewBag.tracks)
+                {
+                    if(i.Id == item.Track_Id)
+                    {
+                        <td>@i.Name</td>
+                    }
+                }   
+            }   
+    </tr>
 </table>

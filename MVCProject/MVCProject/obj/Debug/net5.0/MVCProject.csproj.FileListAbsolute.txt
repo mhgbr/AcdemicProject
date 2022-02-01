@@ -2359,3 +2359,6 @@ C:\Users\Mayada\Desktop\Courses Project\AcdemicProject\MVCProject\MVCProject\obj
 C:\Users\Mayada\Desktop\Courses Project\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\MVCProject.genruntimeconfig.cache
 >>>>>>> f697d823d2dc3026aa08dc8a4781176b0052fea1
 D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Track\ErrorPage.cshtml.g.cs
+C:\Users\Alli\Desktop\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\AuthorizeUser.cshtml.g.cs
+>>>>>>> e6f4da66a7a0793cdad6bbd4abd233e49d0dd923
+D:\R@N\Ahmed\Pro\certificates\ITI\Content\ItI Menofia 3M\11 ASP.Net MVC\AcdemicProject\MVCProject\MVCProject\obj\Debug\net5.0\Razor\Views\Account\AuthorizeUser.cshtml.g.cs

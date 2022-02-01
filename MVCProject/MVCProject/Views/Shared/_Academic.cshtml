@@ -31,6 +31,7 @@
   <!-- Main CSS File -->
   <link href="~/assets/css/style.css" rel="stylesheet">
   <link href="~/assets/css/error_style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -42,9 +43,6 @@
       <h1 class="logo me-auto"><a asp-action="Home" asp-controller="Home">Academic</a></h1>
       @if (User.Identity.IsAuthenticated)
             {
-                
-
-
                 <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
@@ -54,9 +52,9 @@
                     <li><a asp-action="about" asp-controller="Home">About</a></li>
                     <li><a asp-action="contact" asp-controller="Home">Contact</a></li>
                 </ul>
+                </nav>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav><!-- .navbar -->
-                <div class="btn-group ms-4 me-3">
+                 <div class="btn-group ms-4 me-3">
                     <img src="~/assets/img/user.png" class="dropdown-toggle" style="width:30px;cursor: pointer;" data-bs-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
                   <ul class="dropdown-menu">
                     <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Student">Students</a></li>
@@ -67,6 +65,7 @@
                     <li><a class="dropdown-item" asp-action="Logout" asp-controller="Account">Log out</a></li>
                   </ul>
                 </div>
+                @*<!-- .navbar -->*@
             }
             else
             {
@@ -147,6 +146,7 @@
                 </div>
             </div>
         }
+
             <style>
                 #footer {
                 position: absolute;

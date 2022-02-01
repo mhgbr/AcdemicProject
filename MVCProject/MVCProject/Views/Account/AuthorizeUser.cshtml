@@ -1,0 +1,63 @@
+﻿
+
+
+<div class="container mt-3">
+    <h1>SignUp as an Admin</h1>
+    <hr />
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-4">
+            <form asp-action="SignUpAdmin">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" value="@ViewBag.ReturnUrl" />
+
+                <div class="form-group">
+                    <label for="listOfAdmin" >list Of Admin</label>
+                    <select name="listOfAdmin" id="listOfAdmin" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfAdmin)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="listOfInstructor" >list Of Instructor</label>
+                    <select name="listOfInstructor" id="listOfInstructor" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfInstructor)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="listOfHr" >list Of Hr</label>
+                    <select name="listOfHr" id="listOfHr" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfHr)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
+                </div>
+
+                    
+                <div class="form-group">
+                    <label for="listOfStudent" >list Of Student</label>
+                    <select name="listOfStudent" id="listOfStudent" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfStudent)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group mt-2">
+                    <a asp-controller="home" asp-action="home" class="btn btn-secondary p-1 pe-3 ps-3">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

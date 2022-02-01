@@ -7,7 +7,6 @@
     <a asp-action="Create" asp-controller="Instructor" class="btn btn-primary mb-3">Add new Instructor</a>
     <table class="table table-bordered text-center" width="50%">
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Age</th>
             <th>Address</th>
@@ -20,7 +19,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Age</td>
                 <td>@item.Address</td>
@@ -31,6 +29,16 @@
                 <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
                 <td><a asp-action="Delete" asp-controller="Instructor" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
            
+                <td>+20 @item.PhoneNumber</td>
+                @foreach(var i in ViewBag.trackName)
+                {
+                if(i.Id == item.Track_Id)
+                {
+                    <td>@i.Name</td>
+                }
+                }
+                <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
             </tr>
         }
     </table>

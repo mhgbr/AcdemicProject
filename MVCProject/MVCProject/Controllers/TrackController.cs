@@ -68,9 +68,9 @@ namespace pproject.Controllers
                 TrackRepo.Delete(id);
                 return RedirectToAction("GetAll");
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError("", ex.InnerException.Message);
+                ModelState.AddModelError("", "You cant delete this track");
                 return View("ErrorPage");
             }
         }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MVCProject.ViewModel;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class RoleController : Controller
     {
         public RoleManager<IdentityRole> RoleManager { get; }

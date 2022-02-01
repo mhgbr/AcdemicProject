@@ -22,6 +22,18 @@
             <form method="post" asp-action="Create" asp-controller="Instructor">
                 <div asp-validation-summary="All" class="text-danger"></div>
 
+
+@*                <div class="form-group">
+                    <label for="roleName" >Select Role</label>
+                    <select name="roleName" id="roleName" class="form-select form-select-lg mb-3 ml-4">
+                        @foreach(var item in ViewBag.listOfUser)
+                        {
+                            <option value="@item" selected>@item</option>
+                        }
+                    </select>
+                </div>*@
+
+
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
