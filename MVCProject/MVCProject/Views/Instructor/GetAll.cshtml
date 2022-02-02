@@ -10,8 +10,12 @@
             <th>Salary</th>
             <th>PhoneNumber</th>
             <th>TrackId</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>Details</th>
+             @if (User.IsInRole("admin"))
+            {
+                <th>Edit</th>
+                <th>Delete</th>
+            }
         </tr>
         @foreach (var item in Model)
         {
@@ -28,8 +32,12 @@
                     <td>@i.Name</td>
                 }
                 }
-                <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
-                <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
+                <td> <a asp-action="GetById" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Show Details</a></td>
+                @if (User.IsInRole("admin"))
+                {
+                    <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
+                    <td><a asp-action="Delete" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
+                }
             </tr>
         }
     </table>

@@ -1,5 +1,4 @@
-﻿@*@model IdentityUser*@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,8 +11,6 @@
 
   <link href="~/assets/img/LogoIcon.png" rel="icon">
   <link href="~/assets/img/Logo.png" rel="apple-touch-icon">
-
-
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -49,8 +46,6 @@
                     <li><a asp-action="GetAll" asp-controller="Role">Roles</a></li>
                     <li><a asp-controller="account" asp-action="SignUpAdmin">Assign Roles</a></li>
                 }
-                    <li><a asp-action="courses" asp-controller="Home">Courses</a></li>
-                    <li><a asp-action="Instractors" asp-controller="Home">Instructors</a></li>
                     <li><a asp-action="pricing" asp-controller="Home">Pricing</a></li>
                     <li><a asp-action="about" asp-controller="Home">About</a></li>
                     <li><a asp-action="contact" asp-controller="Home">Contact</a></li>
@@ -64,7 +59,7 @@
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" asp-action="GetAll" asp-controller="Student">Students</a></li>
                     <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Course">Courses</a></li>
-                    @if (User.IsInRole("admin"))
+                    @if (User.IsInRole("admin") || User.IsInRole("Instructor"))
                     {
                         <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Instructor">Instructors</a></li>
                     }

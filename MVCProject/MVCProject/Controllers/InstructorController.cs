@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace MVCProject.Controllers
 {
     //[AllowAnonymous]
-    [Authorize(Roles = "admin")]
     public class InstructorController : Controller
     {
         public IInstructorService InsRepo { get; }
@@ -31,7 +30,6 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
-        [Authorize(Roles = "admin")]
         [Route("InstructorData")]
         public IActionResult GetAll()
         {
@@ -73,6 +71,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> Create()
         {
             //user.Include(u => u.Roles)
@@ -95,6 +94,7 @@ namespace MVCProject.Controllers
 
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult Update(int id)
         {
             ViewBag.tracks = TrackRepo.GetAll();
@@ -113,6 +113,7 @@ namespace MVCProject.Controllers
             return View(newins);
 
         }
+        [Authorize(Roles = "admin")]
         public IActionResult Delete([FromRoute] int id)
         {
             try
