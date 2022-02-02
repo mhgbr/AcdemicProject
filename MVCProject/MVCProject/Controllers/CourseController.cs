@@ -78,9 +78,9 @@ namespace MVCProject.Controllers
                 Course.Delete(id);
                 return RedirectToAction("GetAll");
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError("Exception", ex.InnerException.Message);
+                ModelState.AddModelError("Exception", "This Item is in use");
                 return View("GetAll");
             }
         }

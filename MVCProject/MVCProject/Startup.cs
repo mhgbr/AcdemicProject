@@ -46,7 +46,8 @@ namespace MVCProject
         {
             if (env.IsDevelopment())
             {
-
+                app.UseStatusCodePagesWithRedirects("/Error");
+                app.UseExceptionHandler("/Error");
                 app.UseDeveloperExceptionPage();
             }
             else

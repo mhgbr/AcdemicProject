@@ -121,9 +121,9 @@ namespace MVCProject.Controllers
                 InsRepo.Delete(id);
                 return RedirectToAction("GetAll");
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError(string.Empty, ex.InnerException.Message);
+                ModelState.AddModelError(string.Empty, "This Item is in use");
                 return View();
             }
         }

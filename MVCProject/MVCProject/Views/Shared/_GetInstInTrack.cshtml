@@ -9,9 +9,9 @@
         <th>PhoneNumber</th>
         <th>Track Name</th>
     </tr>
-    <tr>
             @foreach (var item in Model)
             {
+            <tr>
                 <td>@item.Name</td>
                 <td>@item.Age</td>
                 <td>@item.Address</td>
@@ -24,6 +24,6 @@
                         <td>@i.Name</td>
                     }
                 }   
+            </tr>
             }   
-    </tr>
 </table>

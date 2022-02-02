@@ -1,28 +1,40 @@
 ﻿
 <div class="container mt-3 text-center">
-
-<div class="container">
-
-    <div class="card-group">
-
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-            <p class="card-text">Admins</p>
-        @foreach(var item in ViewBag.listOfAdmin)
+        <div class="card-group">
+  <div class="card">
+    
+    <div class="card-body">
+      <h5 class="card-title">Admins Role</h5>
+      <hr />
+       @foreach(var item in ViewBag.listOfAdmin)
         {
             <h5 class="card-title" value="@item" selected>@item</h5>
         }
-        <p class="card-text m-4">Students</p>
-        @foreach(var item in ViewBag.listOfStudent)
+    </div>
+  </div>
+  <div class="card">
+ 
+    <div class="card-body">
+      <h5 class="card-title">Students Role</h5>
+      <hr />
+      @foreach(var item in ViewBag.listOfStudent)
         {
             <h5 class="card-title" value="@item" selected>@item</h5>
         }
-        <p class="card-text m-4">Instructors</p>
-        @foreach(var item in ViewBag.listOfInstructor)
+    </div>
+  </div>
+  <div class="card">
+     
+    <div class="card-body">
+      <h5 class="card-title">Instructor Role</h5>
+      <hr />
+ @foreach(var item in ViewBag.listOfInstructor)
             {
             <h5 class="card-title" value="@item" selected>@item</h5>
             }
-            </div>
-        </div>
-        </div>
+    </div>
+  </div>
+</div>
+ <a asp-controller="DashBoard" asp-action="index" class="btn btn-secondary p-1 pe-3 ps-3 mt-2">Back To Dashboard</a>
+
 </div>
