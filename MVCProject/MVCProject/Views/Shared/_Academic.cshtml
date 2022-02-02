@@ -39,11 +39,16 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a asp-action="Home" asp-controller="Home">Academic</a></h1>
-      @if (User.Identity.IsAuthenticated)
+            @if (User.Identity.IsAuthenticated)
             {
                 <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
+                @if (User.IsInRole("admin"))
+                {
                     <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
+                    <li><a asp-action="GetAll" asp-controller="Role">Roles</a></li>
+                    <li><a asp-controller="account" asp-action="SignUpAdmin">Assign Roles</a></li>
+                }
                     <li><a asp-action="courses" asp-controller="Home">Courses</a></li>
                     <li><a asp-action="Instractors" asp-controller="Home">Instructors</a></li>
                     <li><a asp-action="pricing" asp-controller="Home">Pricing</a></li>
@@ -58,9 +63,12 @@
                     <li class="dropdown-item" style="cursor: context-menu;">@User.Identity.Name</li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" asp-action="GetAll" asp-controller="Student">Students</a></li>
-                    <li><a class="dropdown-item" asp-action="GetAll" asp-controller="Course">Courses</a></li>
-                    <li><a class="dropdown-item" asp-action="GetAll" asp-controller="Instructor">Instructors</a></li>
-                    <li><a class="dropdown-item" asp-action="GetAll" asp-controller="Track">Tracks</a></li>
+                    <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Course">Courses</a></li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Instructor">Instructors</a></li>
+                    }
+                    <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Track">Tracks</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" asp-action="Logout" asp-controller="Account">Log out</a></li>
                   </ul>

@@ -10,7 +10,7 @@ namespace MVCProject.Models
 
         [Remote(action: "IsExist", controller: "Course", ErrorMessage = "Course Name is already exists", AdditionalFields = "Id")]
         [Required(ErrorMessage = "Name is required")]
-        [RegularExpression(pattern: "^[a-zA-Z]{3,30}$", ErrorMessage = "Course Name must be between 3 and 30 letters")]
+        [RegularExpression(pattern: "^[a-zA-Z]{1,30}$", ErrorMessage = "Course Name must be between 1 and 30 letters")]
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Duration is required")]

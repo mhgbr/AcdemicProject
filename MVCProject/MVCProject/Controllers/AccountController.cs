@@ -21,14 +21,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult SignUp(string ReturnUrl = "~/Account/Login")
+        public IActionResult SignUp(string ReturnUrl = "~/Home/Home")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> SignUp(RegisterVM account,
-            string ReturnUrl = "~/Account/Login")
+            string ReturnUrl = "~/Home/Home")
         {
             if (ModelState.IsValid)
             {
@@ -51,14 +51,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string ReturnUrl = "~/DashBoard")
+        public IActionResult Login(string ReturnUrl = "~/Home/Home")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM account,
-            string ReturnUrl = "~/DashBoard")
+            string ReturnUrl = "~/Home/Home")
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace MVCProject.Controllers
             return Json(false);
         }
 
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         public async Task<IActionResult> AuthorizeUser()
         {
             ViewData["listOfAdmin"] = await UserManager.GetUsersInRoleAsync("admin");
@@ -104,7 +104,7 @@ namespace MVCProject.Controllers
             return View();
         }
 
-        //[Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public IActionResult SignUpAdmin(string ReturnUrl = "~/Account/AuthorizeUser")
         {
@@ -113,8 +113,8 @@ namespace MVCProject.Controllers
             ViewData["listOfUser"] = UserManager.Users.Select(x => x.UserName).ToList();
             return View("SignUpAdmin");
         }
-        [HttpPost]
 
+        [HttpPost]
         public async Task<IActionResult> SignUpAdmin(string name, string roleName,
             string ReturnUrl = "~/Account/AuthorizeUser")
         {

@@ -20,12 +20,6 @@
                 <td>@item.Age</td>
                 <td>@item.Address</td>
                 <td>@item.Salary</td>
-                <td>@item.PhoneNumber</td>
-                <td>@item.Track_Id</td>
-                
-                <td> <a asp-action="Update" asp-controller="Instructor" asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
-                <td><a asp-action="Delete" asp-controller="Instructor" asp-route-id="@item.Id" onclick="confirmDelete()" class="btn btn-danger">Delete</a></td>
-           
                 <td>+20 @item.PhoneNumber</td>
                 @foreach(var i in ViewBag.trackName)
                 {

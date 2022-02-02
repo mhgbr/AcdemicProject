@@ -22,7 +22,7 @@
                         <td>@i.Name</td>
                     }
                 }
-                <td> <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-warning">Edit</a></td>
+                <td> <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
                 <td><a asp-action="Delete" asp-controller="Course" asp-route-id="@item.Id" onclick="ConfirmDelete(event)" class="btn btn-danger">Delete</a></td>
                 
             </tr>
