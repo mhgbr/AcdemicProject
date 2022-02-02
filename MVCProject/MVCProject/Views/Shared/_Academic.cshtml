@@ -35,10 +35,15 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a asp-action="Home" asp-controller="Home">Academic</a></h1>
-      @if (User.Identity.IsAuthenticated)
+            @if (User.Identity.IsAuthenticated)
             {
                 <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
+                @if (User.IsInRole("admin"))
+                {
+                    <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
+                    <li><a asp-controller="account" asp-action="SignUpAdmin">Assign Roles</a></li>
+                }
                     <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
                     <li><a asp-action="GetAll" asp-controller="Student">Students</a></li>
                     <li><a asp-action="GetAll" asp-controller="Course">Courses</a></li>

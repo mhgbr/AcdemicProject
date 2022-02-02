@@ -22,7 +22,6 @@ namespace MVCProject.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.
-
                 UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True");
         }
 
