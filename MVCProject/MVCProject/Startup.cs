@@ -51,8 +51,8 @@ namespace MVCProject
             }
             else
             {
-                app.UseStatusCodePagesWithRedirects("/Home/Error");
-                app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithRedirects("/Error");
+                app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
 

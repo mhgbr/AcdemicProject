@@ -51,14 +51,14 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string ReturnUrl = "~/DashBoard/Index")
+        public IActionResult Login(string ReturnUrl = "~/DashBoard")
         {
             ViewData["ReturnUrl"] = ReturnUrl;
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM account,
-            string ReturnUrl = "~/DashBoard/Index")
+            string ReturnUrl = "~/DashBoard")
         {
             if (ModelState.IsValid)
             {
