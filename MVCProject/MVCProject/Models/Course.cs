@@ -14,7 +14,7 @@ namespace MVCProject.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Duration is required")]
-        [Range(minimum: 50, maximum: 200, ErrorMessage = "Duration must be between 0 and 100")]
+        [Range(minimum: 20, maximum: 200, ErrorMessage = "Duration must be between 20 and 200")]
         public int Duration { get; set; }
 
         [ForeignKey("Track")]

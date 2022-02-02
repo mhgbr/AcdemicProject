@@ -31,7 +31,6 @@ namespace MVCProject.Controllers
         }
 
 
-
         [Authorize(Roles = "admin")]
         public IActionResult GetAll()
         {

@@ -15,7 +15,7 @@ namespace MVCProject.Controllers
             TrackServices = _trkRepo;
         }
 
-        [Route("Course")]
+        [Route("CoursesData")]
         public IActionResult GetAll()
         {
             ViewBag.tracks = TrackServices.GetAll();
@@ -28,6 +28,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
+
         public IActionResult Create()
         {
             ViewData["Trs"] = TrackServices.GetAll();
@@ -35,6 +36,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpPost]
+
         public IActionResult Create(Course crs)
         {
             if (ModelState.IsValid)
