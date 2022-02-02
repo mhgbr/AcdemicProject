@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace MVCProject.Controllers
 {
-    
+    //[AllowAnonymous]
+    [Authorize(Roles = "admin")]
     public class InstructorController : Controller
     {
         public IInstructorService InsRepo { get; }
@@ -30,9 +31,6 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
-
-
-        [Authorize(Roles = "admin")]
         public IActionResult GetAll()
         {
             ViewData["trackName"] = TrackRepo.GetAll();
@@ -92,7 +90,6 @@ namespace MVCProject.Controllers
             ViewData["tracks"] = TrackRepo.GetAll();
             return View(newstd);
         }
-
 
 
         [HttpGet]

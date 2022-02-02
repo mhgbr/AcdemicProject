@@ -15,6 +15,7 @@ namespace MVCProject.Controllers
             TrackServices = _trkRepo;
         }
 
+        [Route("CourseData")]
         public IActionResult GetAll()
         {
             ViewBag.tracks = TrackServices.GetAll();

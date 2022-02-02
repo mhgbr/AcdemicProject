@@ -6,6 +6,7 @@ namespace MVCProject.Controllers
     [Authorize(Roles = "admin")]
     public class DashBoardController : Controller
     {
+        [Route("Dashboard")]
         public IActionResult Index()
         {
             return View();

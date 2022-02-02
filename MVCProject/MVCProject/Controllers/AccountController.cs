@@ -113,6 +113,7 @@ namespace MVCProject.Controllers
             ViewData["listOfUser"] = UserManager.Users.Select(x => x.UserName).ToList();
             return View("SignUpAdmin");
         }
+
         [HttpPost]
         public async Task<IActionResult> SignUpAdmin(string name, string roleName,
             string ReturnUrl = "~/Account/AuthorizeUser")

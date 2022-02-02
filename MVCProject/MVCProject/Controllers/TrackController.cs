@@ -15,6 +15,7 @@ namespace pproject.Controllers
         }
 
         // Track/GetAll
+        [Route("Tracks")]
         public IActionResult GetAll()
         {
             return View(TrackRepo.GetAll());

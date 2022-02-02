@@ -32,7 +32,7 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
-
+        [Route("Students")]
         public IActionResult GetAll()
         {
             ViewData["Trs"] = TrackServices.GetAll();
@@ -40,6 +40,7 @@ namespace MVCProject.Controllers
         }
 
         // Student/GetById
+        //[Route("Student/id:int")]
         public IActionResult GetById([FromRoute] int id)
         {
             ViewData["Trs"] = TrackServices.GetAll();
@@ -133,6 +134,7 @@ namespace MVCProject.Controllers
         }
 
         // Student/GetStudent
+       
         public IActionResult GetStudent(int id)
         {
             StdWithCr crs = IStdWithCrService.Get(id);

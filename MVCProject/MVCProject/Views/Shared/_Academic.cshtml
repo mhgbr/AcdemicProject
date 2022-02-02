@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,9 +9,12 @@
   <title>Academic</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="~/assets/img/LogoIcon.png" rel="icon">
   <link href="~/assets/img/Logo.png" rel="apple-touch-icon">
+
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -26,6 +30,8 @@
 
   <!-- Main CSS File -->
   <link href="~/assets/css/style.css" rel="stylesheet">
+  <link href="~/assets/css/error_style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -44,16 +50,29 @@
                     <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
                     <li><a asp-controller="account" asp-action="SignUpAdmin">Assign Roles</a></li>
                 }
-                    <li><a asp-action="index" asp-controller="Dashboard">Dashboard</a></li>
-                    <li><a asp-action="GetAll" asp-controller="Student">Students</a></li>
-                    <li><a asp-action="GetAll" asp-controller="Course">Courses</a></li>
-                    <li><a asp-action="GetAll" asp-controller="Instructor">Instructors</a></li>
-                    <li><a asp-action="GetAll" asp-controller="Track">Tracks</a></li>
-                    <li><a asp-action="Logout" asp-controller="Account" class="btn btn-secondary ms-3" 
-                        style="border-radius: 30px;padding: 5px 20px;font-size: 16px;color: white;">Log out</a></li>
+                    <li><a asp-action="courses" asp-controller="Home">Courses</a></li>
+                    <li><a asp-action="Instractors" asp-controller="Home">Instractors</a></li>
+                    <li><a asp-action="pricing" asp-controller="Home">Pricing</a></li>
+                    <li><a asp-action="about" asp-controller="Home">About</a></li>
+                    <li><a asp-action="contact" asp-controller="Home">Contact</a></li>
                 </ul>
+                </nav>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav><!-- .navbar -->
+                 <div class="btn-group ms-4 me-3">
+                    <img src="~/assets/img/user.png" class="dropdown-toggle" style="width:30px;cursor: pointer;" data-bs-toggle="dropdown" class="dropdown-toggle" aria-expanded="false">
+                  <ul class="dropdown-menu">
+                    <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Student">Students</a></li>
+                    <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Course">Courses</a></li>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Instructor">Instructors</a></li>
+                    }
+                    <li><a  class="dropdown-item" asp-action="GetAll" asp-controller="Track">Tracks</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" asp-action="Logout" asp-controller="Account">Log out</a></li>
+                  </ul>
+                </div>
+                @*<!-- .navbar -->*@
             }
             else
             {
@@ -134,6 +153,7 @@
                 </div>
             </div>
         }
+
             <style>
                 #footer {
                 position: absolute;

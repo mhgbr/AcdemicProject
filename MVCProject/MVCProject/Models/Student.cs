@@ -24,15 +24,18 @@ namespace MVCProject.Models
         [MaxLength(50)]
         public string Address { get; set; }
 
+        [Display(Name = "Phone Number")]
         [Required]
         [DataType(DataType.PhoneNumber)]
         //[RegularExpression(pattern: "^01[0125][0-9]{8}$", ErrorMessage = "Invalid Number")]
         public int PhoneNumber { get; set; }
 
+        [Display(Name="Track Name")]
         [ForeignKey("Track")]
         public int Track_Id { get; set; }
         public Track Track { get; set; }
 
+        [Display(Name = "Instructor Name")]
         [ForeignKey("Instructor")]
         public int? Inst_Id { get; set; }
         public Instructor Instructor { get; set; }

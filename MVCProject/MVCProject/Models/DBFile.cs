@@ -19,11 +19,11 @@ namespace MVCProject.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<StdWithCr> StdWithCrs { get; set; }
         public DbSet<InsWithCr> InsWithCrs { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.
-                UseSqlServer("Data Source=.;Initial Catalog=team;Integrated Security=True");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.
+        //        UseSqlServer("Data Source=.;Initial Catalog=final;Integrated Security=True");
+        //}
 
     }
 }

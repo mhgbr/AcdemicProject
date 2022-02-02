@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MVCProject.Migrations
 {
@@ -248,7 +248,7 @@ namespace MVCProject.Migrations
                     Address = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PhoneNumber = table.Column<int>(type: "int", nullable: false),
                     Track_Id = table.Column<int>(type: "int", nullable: false),
-                    Inst_Id = table.Column<int>(type: "int", nullable: false)
+                    Inst_Id = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -258,13 +258,13 @@ namespace MVCProject.Migrations
                         column: x => x.Inst_Id,
                         principalTable: "instrcutors",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Students_Tracks_Track_Id",
                         column: x => x.Track_Id,
                         principalTable: "Tracks",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -285,7 +285,7 @@ namespace MVCProject.Migrations
                         column: x => x.CrsId,
                         principalTable: "Courses",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_StdWithCrs_Students_StId",
                         column: x => x.StId,

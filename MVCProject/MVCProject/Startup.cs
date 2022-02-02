@@ -46,11 +46,13 @@ namespace MVCProject
         {
             if (env.IsDevelopment())
             {
+
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePagesWithRedirects("/Error");
+                app.UseExceptionHandler("/Error");
             }
             app.UseStaticFiles();
 
@@ -64,7 +66,7 @@ namespace MVCProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Home}/{id?}");
             });
         }
     }
