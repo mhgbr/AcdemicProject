@@ -548,17 +548,17 @@ section {
   color: #37423b;
 }
 
-
 .breadcrumbs {
   text-align: center;
   background: var(--Main-color);
-  padding: 30px 0;
+  padding: 20px 0;
   color: #fff;
 }
 
 .breadcrumbs h2 {
-  font-size: 32px;
-  font-weight: 500;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
 }
 
 .breadcrumbs p {

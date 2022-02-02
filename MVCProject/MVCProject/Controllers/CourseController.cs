@@ -28,6 +28,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
+
         public IActionResult Create()
         {
             ViewData["Trs"] = TrackServices.GetAll();
@@ -35,6 +36,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpPost]
+
         public IActionResult Create(Course crs)
         {
             if (ModelState.IsValid)
@@ -103,9 +105,6 @@ namespace MVCProject.Controllers
                 }
             }
         }
-
-
-
 
     }
 }

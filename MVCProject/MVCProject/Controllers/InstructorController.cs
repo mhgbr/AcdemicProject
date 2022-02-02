@@ -31,6 +31,8 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
+        [Authorize(Roles = "admin")]
+        [Route("InstructorData")]
         public IActionResult GetAll()
         {
             ViewData["trackName"] = TrackRepo.GetAll();
