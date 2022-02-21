@@ -5,15 +5,21 @@
 
 
 <div class="container mt-2">
-    <a asp-controller="Track" asp-action="Create" class="btn btn-primary mb-2">Add New</a>
+    @if (User.IsInRole("admin"))
+        {
+            <a asp-controller="Track" asp-action="Create" class="btn btn-primary mb-2">Add New</a>
+        }
     <table class="table table-bordered text-center" width="50%">
         <thead>
             <tr>
                 <th style="text-align: center">Name</th>
                 <th style="text-align: center">Manager Name</th>
-                <th style="text-align: center">Update</th>
+                @if (User.IsInRole("admin"))
+                {
                 <th style="text-align: center">Info</th>
-                <th style="text-align: center">Delete</th>
+                <th style="text-align: center">Update</th>
+                <th style="text-align: center">Delete</th>       
+                }
             </tr>
         </thead>
         <tbody>   
@@ -22,23 +28,26 @@
                     <tr>
                         <td>@item.Name</td>
                         <td>@item.Manager</td>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <td class="text-center">
+                            <a onclick="Details(@item.Id)" class="btn btn-primary">Show Instructors</a>
+                        </td>
                         <td class="text-center">
                             <a asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary">
                                 Edit
                             </a>
                         </td>
                         <td class="text-center">
-                            <a onclick="Details(@item.Id)" class="btn btn-primary">Show Instructors</a>
-                        </td>
-                        <td class="text-center">
                             <a asp-action="Delete" asp-route-id="@item.Id"
                             onclick="confirmDelete()" class="btn btn-danger">Delete</a>
                         </td>
-                    </tr>
+                    }
+                </tr>
                 }
         </tbody>
     </table>
-    <div id="div1" class="mt-2"></div>
+    <div id="div1" style="margin-bottom: 5%;" class="mt-2"></div>
 </div>
 <script>
     function confirmDelete() 
@@ -58,4 +67,3 @@
         });
     };
 </script>
-

@@ -23,10 +23,11 @@ namespace MVCProject
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            //inject connection string
+            //services.AddDbContext<DBFile>(x => x.UseSqlServer("Data Source=.;Initial Catalog=task;Integrated Security=True"));
             services.AddDbContext<DBFile>(
                 option => option.UseSqlServer(Configuration.GetConnectionString("cs")));
-
+            
             //inject user manager - role manager - signin manager && add all store class that deal with database
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DBFile>();
 
@@ -46,7 +47,8 @@ namespace MVCProject
         {
             if (env.IsDevelopment())
             {
-
+                app.UseStatusCodePagesWithRedirects("/Error");
+                app.UseExceptionHandler("/Error");
                 app.UseDeveloperExceptionPage();
             }
             else

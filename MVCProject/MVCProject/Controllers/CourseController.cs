@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MVCProject.Models;
 using MVCProject.Service;
 using System;
@@ -36,7 +37,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpPost]
-
+        [Authorize(Roles = "admin")]
         public IActionResult Create(Course crs)
         {
             if (ModelState.IsValid)
@@ -49,6 +50,7 @@ namespace MVCProject.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult Update(int id)
         {
             ViewData["Trs"] = TrackServices.GetAll();
@@ -68,6 +70,7 @@ namespace MVCProject.Controllers
             return View(crs);
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult Delete(int id)
         {
             try
@@ -75,9 +78,9 @@ namespace MVCProject.Controllers
                 Course.Delete(id);
                 return RedirectToAction("GetAll");
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError("Exception", ex.InnerException.Message);
+                ModelState.AddModelError("Exception", "This Item is in use");
                 return View("GetAll");
             }
         }

@@ -103,9 +103,9 @@ namespace MVCProject.Controllers
                 StudentServices.Delete(id);
                 return RedirectToAction("GetAll");
             }
-            catch (Exception ex)
+            catch
             {
-                ModelState.AddModelError("", ex.InnerException.Message);
+                ModelState.AddModelError("", "This Item is in use");
                 return View("Update");
             }
         }

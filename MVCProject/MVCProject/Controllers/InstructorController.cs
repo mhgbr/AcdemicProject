@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 namespace MVCProject.Controllers
 {
     //[AllowAnonymous]
-    [Authorize(Roles = "admin")]
     public class InstructorController : Controller
     {
         public IInstructorService InsRepo { get; }
@@ -31,7 +30,6 @@ namespace MVCProject.Controllers
             RoleManager = _RoleManager;
         }
 
-        [Authorize(Roles = "admin")]
         [Route("InstructorData")]
         public IActionResult GetAll()
         {
@@ -41,6 +39,63 @@ namespace MVCProject.Controllers
         public IActionResult GetById([FromRoute] int id)
         {
             return View(InsRepo.GetById(id));
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public async Task<IActionResult> Create()
+        {
+            //user.Include(u => u.Roles)
+            ViewData["listOfUser"] = await UserManager.GetUsersInRoleAsync("instructor");
+            ViewBag.tracks = TrackRepo.GetAll();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Instructor newstd)
+        {
+            if (ModelState.IsValid)
+            {
+                InsRepo.Create(newstd);
+                return RedirectToAction("GetAll");
+            }
+            ViewData["tracks"] = TrackRepo.GetAll();
+            return View(newstd);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public IActionResult Update(int id)
+        {
+            ViewBag.tracks = TrackRepo.GetAll();
+            Instructor std = InsRepo.GetById(id);
+            return View(std);
+        }
+        [HttpPost]
+        public IActionResult Update(Instructor newins)
+        {
+            if (ModelState.IsValid)
+            {
+                InsRepo.Update(newins);
+                return RedirectToAction("GetAll");
+            }
+            ViewBag.tracks = TrackRepo.GetAll();
+            return View(newins);
+
+        }
+        [Authorize(Roles = "admin")]
+        public IActionResult Delete([FromRoute] int id)
+        {
+            try
+            {
+                InsRepo.Delete(id);
+                return RedirectToAction("GetAll");
+            }
+            catch
+            {
+                ModelState.AddModelError(string.Empty, "This Item is in use");
+                return View();
+            }
         }
 
         public IActionResult NameExit(string Name, int id)
@@ -71,63 +126,6 @@ namespace MVCProject.Controllers
             List<Instructor> gModel = InsRepo.GetAllInstById(id);
             return PartialView("_GetInstInTrack", gModel);
         }
-
-        [HttpGet]
-        public async Task<IActionResult> Create()
-        {
-            //user.Include(u => u.Roles)
-            ViewData["listOfUser"] = await UserManager.GetUsersInRoleAsync("instructor");
-            ViewBag.tracks = TrackRepo.GetAll();
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Instructor newstd)
-        {
-            if (ModelState.IsValid)
-            {
-                InsRepo.Create(newstd);
-                return RedirectToAction("GetAll");
-            }
-            ViewData["tracks"] = TrackRepo.GetAll();
-            return View(newstd);
-        }
-
-
-        [HttpGet]
-        public IActionResult Update(int id)
-        {
-            ViewBag.tracks = TrackRepo.GetAll();
-            Instructor std = InsRepo.GetById(id);
-            return View(std);
-        }
-        [HttpPost]
-        public IActionResult Update(Instructor newins)
-        {
-            if (ModelState.IsValid)
-            {
-                InsRepo.Update(newins);
-                return RedirectToAction("GetAll");
-            }
-            ViewBag.tracks = TrackRepo.GetAll();
-            return View(newins);
-
-        }
-        public IActionResult Delete([FromRoute] int id)
-        {
-            try
-            {
-                InsRepo.Delete(id);
-                return RedirectToAction("GetAll");
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, ex.InnerException.Message);
-                return View();
-            }
-        }
-
-
 
     }
 }
